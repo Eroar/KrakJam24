@@ -1,26 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://co6maj681xg2f"]
+[gd_scene load_steps=3 format=3 uid="uid://cwtxx6oqwg8gm"]
 
-[ext_resource type="PackedScene" uid="uid://cjf8w5l3cifwt" path="res://level/map.blend" id="1_5oytw"]
-[ext_resource type="PackedScene" uid="uid://da4bprsj1s7eh" path="res://package/gołąb.glb" id="2_7b2ee"]
-[ext_resource type="PackedScene" uid="uid://cshankt1lv7h6" path="res://player/player.dae" id="3_ni6xh"]
+[ext_resource type="PackedScene" uid="uid://beop6laetykxp" path="res://level/level.blend" id="1_twdsq"]
+[ext_resource type="PackedScene" uid="uid://d0nt2yj42xg1f" path="res://player/player.tscn" id="2_mfx4v"]
 
-[node name="game" type="Node3D"]
+[node name="Game" type="Node3D"]
 
-[node name="map" parent="." instance=ExtResource("1_5oytw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.922635, 0, 2.33739)
+[node name="level" parent="." instance=ExtResource("1_twdsq")]
+
+[node name="Player" parent="." instance=ExtResource("2_mfx4v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.54369, 2.67341, 0.192105)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, -5.28425e-16, 2.98969e-16, 2.98969e-16, 0.857167, 0.515038, -5.28425e-16, -0.515038, 0.857167, 2.08165e-12, 13.532, 18.289)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, -6.92275e-16, -6.05662e-17, -6.05662e-17, -0.173648, 0.984808, -6.92275e-16, -0.984808, -0.173648, 0, 0, 0)
-sky_mode = 1
-
-[node name="gołąb" parent="." instance=ExtResource("2_7b2ee")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.19654, 2.11026, 2.29665)
-
-[node name="player" parent="." instance=ExtResource("3_ni6xh")]
-transform = Transform3D(0.998093, 0, 0.061728, 0, 1, 0, -0.061728, 0, 0.998093, -0.0131083, 1.44407, 4.74536)
-
-[editable path="gołąb"]
-[editable path="player"]
+transform = Transform3D(1, -5.95416e-16, 2.4663e-16, 2.4663e-16, 0.707107, 0.707107, -5.95416e-16, -0.707107, 0.707107, 0, 9.36626, 10.0581)

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0nt2yj42xg1f"]
+
+[ext_resource type="PackedScene" uid="uid://ck232j04jon4c" path="res://player/player.blend" id="1_hupkw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xxurf"]
+size = Vector3(2, 2, 2)
+
+[node name="Player" type="CharacterBody3D"]
+
+[node name="player-mesh" parent="." instance=ExtResource("1_hupkw")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_xxurf")
