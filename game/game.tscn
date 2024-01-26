@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cwtxx6oqwg8gm"]
+[gd_scene load_steps=4 format=3 uid="uid://cwtxx6oqwg8gm"]
 
 [ext_resource type="PackedScene" uid="uid://beop6laetykxp" path="res://level/level.blend" id="1_twdsq"]
 [ext_resource type="PackedScene" uid="uid://d0nt2yj42xg1f" path="res://player/player.tscn" id="2_mfx4v"]
+[ext_resource type="PackedScene" uid="uid://c75uyldtupyq8" path="res://package/package.blend" id="3_alge0"]
 
 [node name="Game" type="Node3D"]
 
@@ -12,3 +13,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.54369, 2.67341, 0.192105)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, -5.95416e-16, 2.4663e-16, 2.4663e-16, 0.707107, 0.707107, -5.95416e-16, -0.707107, 0.707107, 0, 9.36626, 10.0581)
+
+[node name="package" parent="." instance=ExtResource("3_alge0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10242, 0.580231, 1)

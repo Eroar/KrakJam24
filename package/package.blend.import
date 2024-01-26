@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://prg28lc7788k"
-path="res://.godot/imported/cube.blend-4aef4e7bd9ba292bf5f6460789748edb.scn"
+uid="uid://c75uyldtupyq8"
+path="res://.godot/imported/package.blend-7194058aefa1645db32cf42939f1812b.scn"
 
 [deps]
 
-source_file="res://package/cube.blend"
-dest_files=["res://.godot/imported/cube.blend-4aef4e7bd9ba292bf5f6460789748edb.scn"]
+source_file="res://package/package.blend"
+dest_files=["res://.godot/imported/package.blend-7194058aefa1645db32cf42939f1812b.scn"]
 
 [params]
 
