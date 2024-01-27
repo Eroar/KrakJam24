@@ -35,7 +35,8 @@ func _physics_process(delta):
 func _ready():
 	var player =$PlayerMesh/AnimationPlayer
 	player.get_animation("Walking").loop = true
-	player.play("Walking")
+	player.get_animation("WalkingWithPackage").loop = true
+	player.play("WalkingWithPackage")
 	# player.loop = true
 	# var animation = player.get_animation("Walking")
 	# animation.loop = true
