@@ -18,8 +18,8 @@ func _physics_process(delta):
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction = Vector3(input_dir.x, 0, input_dir.y).normalized()
 	if direction:
-		velocity.x = direction.x * MOVEMENT_SPEED
-		velocity.z = direction.z * MOVEMENT_SPEED
+		velocity.x = -direction.x * MOVEMENT_SPEED
+		velocity.z = -direction.z * MOVEMENT_SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, MOVEMENT_SPEED)
 		velocity.z = move_toward(velocity.z, 0, MOVEMENT_SPEED)
