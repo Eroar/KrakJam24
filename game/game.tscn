@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ctirxk0eo8ysy" path="res://mlotek/mlotek.tscn" id="3_rt35b"]
 [ext_resource type="PackedScene" path="res://game/camera.tscn" id="4_87j8i"]
 [ext_resource type="PackedScene" path="res://level/Nadanie.tscn" id="5_gsixh"]
-[ext_resource type="PackedScene" path="res://level/Odbior1.tscn" id="6_cgpxe"]
+[ext_resource type="PackedScene" uid="uid://cohb346rl302n" path="res://level/Odbior1.tscn" id="6_cgpxe"]
 [ext_resource type="PackedScene" path="res://level/Odbior2.tscn" id="7_qwsel"]
 [ext_resource type="PackedScene" path="res://level/Odbior3.tscn" id="8_7skfu"]
 
