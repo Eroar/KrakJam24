@@ -1,24 +1,19 @@
 extends Area3D
 
-var canInteract = false
-var interactableObject = null
+func tryToInteract():
+	var collisions = get_overlapping_areas()
+	collisions = collisions.filter(func(x): return x.is_in_group("interactable"))
 
-func _on_area_entered(area:Area3D):
-	if area.is_in_group("interactable"):
-		canInteract = true
-		interactableObject = area
-
-func _on_area_exited(area:Area3D):
-	if area.is_in_group("interactable"):
-		canInteract = false
-		interactableObject = null
+	# no interactable object in range
+	if collisions.size() == 0:
+		print("no interactable object in range")
+		return
+	
+	var interactableObject = collisions[0].get_parent()
+	interactableObject.emit_signal("interaction_requested")
 
 
 func _process(_delta):
-	if !canInteract:
-		return
-	if interactableObject == null:
-		return
-
 	if Input.is_action_just_pressed("interact"):
-		interactableObject.emit_signal("interaction_requested")
+		tryToInteract()
+
