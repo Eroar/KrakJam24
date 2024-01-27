@@ -14,7 +14,3 @@ func spawn_node():
 func _ready():
 	spawn_node()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

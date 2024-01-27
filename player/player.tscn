@@ -1,23 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkev8wscjufye"]
+[gd_scene load_steps=6 format=3 uid="uid://d0nt2yj42xg1f"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_5llfd"]
 [ext_resource type="PackedScene" uid="uid://ck232j04jon4c" path="res://player/player.blend" id="1_hupkw"]
+[ext_resource type="Script" path="res://interactions/InteracteeZone.gd" id="3_ua2jn"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ftbda"]
 margin = 0.414
 height = 1.5
 radius = 0.8
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_mfcrj"]
+
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_5llfd")
 
 [node name="player-mesh" parent="." instance=ExtResource("1_hupkw")]
 
-[node name="Sphere_003" parent="player-mesh" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0.602205)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.777889, 0)
 shape = SubResource("CylinderShape3D_ftbda")
 
-[editable path="player-mesh"]
+[node name="InteracteeZone" type="Area3D" parent="."]
+script = ExtResource("3_ua2jn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteracteeZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.6, 0.8)
+shape = SubResource("BoxShape3D_mfcrj")
+
+[connection signal="area_entered" from="InteracteeZone" to="InteracteeZone" method="_on_area_entered"]
+[connection signal="area_exited" from="InteracteeZone" to="InteracteeZone" method="_on_area_exited"]
