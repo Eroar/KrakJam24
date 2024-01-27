@@ -10,8 +10,13 @@ radius = 2.0
 size = Vector3(0.8, 0.8, 0.8)
 
 [node name="Package" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 7
+mass = 0.01
 
 [node name="PickupableZone" parent="." instance=ExtResource("2_o6keg")]
+collision_layer = 4
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PickupableZone"]
 shape = SubResource("SphereShape3D_vgp8c")

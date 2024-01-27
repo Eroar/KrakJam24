@@ -12,12 +12,12 @@ point_count = 4
 up_vector_enabled = false
 
 [node name="Path3D" type="Path3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.5, 2.08165e-12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.25, 2.08165e-12)
 curve = SubResource("Curve3D_wrvse")
 script = ExtResource("1_ysviw")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="."]
-transform = Transform3D(0.0983565, -0.0247386, 0.994836, 1.86264e-09, 0.999668, 0.0248595, -0.995146, -0.00244507, 0.0983259, 16.8159, 0.0602856, 4.99742)
+transform = Transform3D(0.222778, 0.0110482, 0.974799, 0, 0.999913, -0.0113332, -0.974864, 0.00252475, 0.222763, 16.816, 2.08165e-12, 4.997)
 cubic_interp = false
 loop = false
 tilt_enabled = false
