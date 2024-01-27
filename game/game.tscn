@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwtxx6oqwg8gm"]
+[gd_scene load_steps=7 format=3 uid="uid://cwtxx6oqwg8gm"]
 
 [ext_resource type="PackedScene" uid="uid://beop6laetykxp" path="res://level/level.blend" id="1_twdsq"]
 [ext_resource type="PackedScene" uid="uid://d0nt2yj42xg1f" path="res://player/player.tscn" id="2_mfx4v"]
+[ext_resource type="PackedScene" uid="uid://ctirxk0eo8ysy" path="res://mlotek/mlotek.tscn" id="3_rt35b"]
 [ext_resource type="PackedScene" uid="uid://bdvgefko31jd2" path="res://level/odbior.blend" id="3_wnaq2"]
 [ext_resource type="Script" path="res://level/odbior.gd" id="4_d7hfa"]
 [ext_resource type="PackedScene" uid="uid://dneqhp1nuk5er" path="res://level/nadanie.blend" id="4_kegev"]
@@ -26,3 +27,6 @@ sky_mode = 1
 script = ExtResource("4_d7hfa")
 
 [node name="nadanie" parent="." instance=ExtResource("4_kegev")]
+
+[node name="Mlotek" parent="." instance=ExtResource("3_rt35b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95375, -6.46042)
