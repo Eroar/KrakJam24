@@ -17,5 +17,6 @@ func _on_interaction_requested(package):
 		var new_trans = transmission.instantiate()
 		add_child.call_deferred(new_trans)
 		package.reparent(new_trans.get_node("PathFollow3D"), false)
+		get_parent().SCORE += 5
 		
 		
