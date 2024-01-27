@@ -9,8 +9,8 @@ func tryToInteract():
 		print("no interactable object in range")
 		return
 	
-	var interactableObject = collisions[0].get_parent()
-	interactableObject.emit_signal("interaction_requested")
+	var interactableObject = collisions[0]
+	interactableObject.emit_signal("interaction_requested", null)
 
 
 func _process(_delta):
