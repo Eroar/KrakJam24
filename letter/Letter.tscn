@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bxeimg7gsvjh6"]
 
-[ext_resource type="PackedScene" uid="uid://t1a65n013osy" path="res://package/list.blend" id="1_ymp8b"]
+[ext_resource type="PackedScene" uid="uid://jcfb72fy7ox4" path="res://letter/letter.blend" id="1_4lc1t"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6o2xj"]
 size = Vector3(1.09021, 0.21521, 0.541504)
@@ -11,8 +11,8 @@ collision_layer = 4
 collision_mask = 7
 mass = 0.01
 
-[node name="list2" parent="." instance=ExtResource("1_ymp8b")]
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000793457, 0.101746, 0.0065918)
 shape = SubResource("BoxShape3D_6o2xj")
+
+[node name="LetterMesh" parent="." instance=ExtResource("1_4lc1t")]

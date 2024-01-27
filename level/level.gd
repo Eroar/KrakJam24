@@ -11,6 +11,6 @@ func spawn_package():
 func _ready():
 	spawn_package()
 	
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("spawn_box"):
 		spawn_package()

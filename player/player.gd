@@ -1,8 +1,9 @@
 extends CharacterBody3D
 
-
 @export var MOVEMENT_SPEED = 8.0
 @export var ROTATION_SPEED = 5.0
+@onready var aPlayer =$PlayerMesh/AnimationPlayer
+@onready var animationTree = $AnimationTree
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -30,14 +31,28 @@ func _physics_process(delta):
 		transform.basis = transform.basis.slerp(target_rotation, delta * ROTATION_SPEED)
 
 	move_and_slide()
+	update_animation_parameters()
 
+
+func update_animation_parameters():
+	var hasPackage = $InteracteeZone.pickedUp
+
+	var idle = velocity==Vector3.ZERO && !hasPackage
+	var standingWithPackage = velocity==Vector3.ZERO && hasPackage
+	var walking = velocity!=Vector3.ZERO && !hasPackage
+	var walkingWithPackage = velocity!=Vector3.ZERO && hasPackage
+	
+	animationTree["parameters/conditions/idle"] = idle
+	animationTree["parameters/conditions/standingWithPackage"] = standingWithPackage
+	animationTree["parameters/conditions/walking"] = walking
+	animationTree["parameters/conditions/walkingWithPackage"] = walkingWithPackage
 
 func _ready():
-	var player =$PlayerMesh/AnimationPlayer
-	player.get_animation("Walking").loop = true
-	player.get_animation("WalkingWithPackage").loop = true
-	player.play("WalkingWithPackage")
+	aPlayer.get_animation("Walking").loop = true
+	aPlayer.get_animation("Idle").loop = true
+	aPlayer.get_animation("WalkingWithPackage").loop = true
+	aPlayer.get_animation("StandingWithPackage").loop = true
+
 	# player.loop = true
-	# var animation = player.get_animation("Walking")
 	# animation.loop = true
 
