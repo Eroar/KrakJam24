@@ -1,3 +1,3 @@
 extends Area3D
 
-signal interaction_requested
+signal interaction_requested(package)

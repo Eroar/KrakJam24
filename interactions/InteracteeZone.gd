@@ -21,4 +21,5 @@ func _process(_delta):
 		return
 
 	if Input.is_action_just_pressed("interact"):
-		interactableObject.emit_signal("interaction_requested")
+		print(interactableObject.get_node("CollisionShape3D").get_children())
+		interactableObject.emit_signal("interaction_requested", null)
