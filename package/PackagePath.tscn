@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdsjcr0rg5lx2"]
+
+[ext_resource type="PackedScene" uid="uid://h6ciucymvy2t" path="res://package/package.tscn" id="1_aj7x5"]
+[ext_resource type="Script" path="res://package/PackagePath.gd" id="1_ysviw"]
+
+[sub_resource type="Curve3D" id="Curve3D_wrvse"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 16.8159, 0.0602856, 4.99742, 0.13903, 0.0295893, 1.33004, -0.13903, -0.0295893, -1.33004, 12.0389, -0.0590847, 4.52528, -0.415582, 0.0929036, 2.15419, 0.415582, -0.0929036, -2.15419, 12.0966, -0.121249, -4.34317, 0, 0, 0, 0, 0, 0, 17.114, -0.115885, -5.05576),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[node name="Path3D" type="Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.57265, 2.08165e-12)
+curve = SubResource("Curve3D_wrvse")
+script = ExtResource("1_ysviw")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="."]
+transform = Transform3D(0.0983565, -0.0247386, 0.994836, 1.86264e-09, 0.999668, 0.0248595, -0.995146, -0.00244507, 0.0983259, 16.8159, 0.0602856, 4.99742)
+cubic_interp = false
+loop = false
+tilt_enabled = false
+
+[node name="Package" parent="PathFollow3D" instance=ExtResource("1_aj7x5")]
+transform = Transform3D(1, 1.96755e-11, 1.83062e-09, -4.17735e-10, 1, -4.99485e-10, -7.67597e-10, 4.8502e-10, 1, 0, 0.346806, 0.00862694)

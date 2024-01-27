@@ -1,27 +1,16 @@
 extends Node3D
 
-@export var package = preload("res://package/package.tscn")
+@export var path = preload("res://package/PackagePath.tscn")
 var t = 0.0
 
 func spawn_package():
-	var new_package = package.instantiate()
-	get_parent().get_node("Path3D/PathFollow3D").add_child.call_deferred(new_package)
+	var new_path = path.instantiate()
+	get_parent().add_child.call_deferred(new_path)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	spawn_package()
 	
 func _process(delta):
-	t += delta
-	var path = get_parent().get_node("Path3D/PathFollow3D")
-	var package = path.get_children()
-	if path.progress_ratio >= .98:
-		for i in package:
-			i.queue_free()
-		t = 0.0
-		path.progress_ratio = 0.0
-		# idk why but every other iteration package is node3d or package
+	if Input.is_action_just_pressed("spawn_box"):
 		spawn_package()
-		
-	else:
-		path.progress = 3.0 * t

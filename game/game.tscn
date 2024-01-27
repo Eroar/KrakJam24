@@ -1,22 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://cwtxx6oqwg8gm"]
+[gd_scene load_steps=11 format=3 uid="uid://cwtxx6oqwg8gm"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_5d84a"]
 [ext_resource type="PackedScene" uid="uid://beop6laetykxp" path="res://level/level.blend" id="1_twdsq"]
 [ext_resource type="Script" path="res://level/level.gd" id="2_80i2f"]
 [ext_resource type="PackedScene" uid="uid://d0nt2yj42xg1f" path="res://player/player.tscn" id="2_mfx4v"]
 [ext_resource type="PackedScene" uid="uid://ctirxk0eo8ysy" path="res://mlotek/mlotek.tscn" id="3_rt35b"]
-[ext_resource type="PackedScene" path="res://game/camera.tscn" id="4_87j8i"]
-[ext_resource type="PackedScene" path="res://level/Nadanie.tscn" id="5_gsixh"]
-[ext_resource type="PackedScene" path="res://level/Odbior1.tscn" id="6_cgpxe"]
-[ext_resource type="PackedScene" path="res://level/Odbior2.tscn" id="7_qwsel"]
-[ext_resource type="PackedScene" path="res://level/Odbior3.tscn" id="8_7skfu"]
-
-[sub_resource type="Curve3D" id="Curve3D_wrvse"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 16.8159, 0.0602856, 4.99742, 0.13903, 0.0295893, 1.33004, -0.13903, -0.0295893, -1.33004, 12.0389, -0.0590847, 4.52528, -0.415582, 0.0929036, 2.15419, 0.415582, -0.0929036, -2.15419, 12.0966, -0.121249, -4.34317, 0, 0, 0, 0, 0, 0, 17.114, -0.115885, -5.05576),
-"tilts": PackedFloat32Array(0, 0, 0, 0)
-}
-point_count = 4
+[ext_resource type="PackedScene" uid="uid://bephjdfjpv2vw" path="res://game/camera.tscn" id="4_87j8i"]
+[ext_resource type="PackedScene" uid="uid://d2ut1877kxwor" path="res://level/Nadanie.tscn" id="5_gsixh"]
+[ext_resource type="PackedScene" uid="uid://seyjfym47cty" path="res://level/Odbior1.tscn" id="6_cgpxe"]
+[ext_resource type="PackedScene" uid="uid://dudt7in0ha3qg" path="res://level/Odbior2.tscn" id="7_qwsel"]
+[ext_resource type="PackedScene" uid="uid://dgfpeuscerl81" path="res://level/Odbior3.tscn" id="8_7skfu"]
 
 [node name="Game" type="Node3D"]
 script = ExtResource("1_5d84a")
@@ -48,12 +41,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.25, 2.08165e-12, 0.025)
 
 [node name="Odbior3" parent="." instance=ExtResource("8_7skfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.25, 2.08165e-12, -5.182)
-
-[node name="Path3D" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.57265, 2.08165e-12)
-curve = SubResource("Curve3D_wrvse")
-
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(0.0983565, -0.0247386, 0.994836, 1.86264e-09, 0.999668, 0.0248595, -0.995146, -0.00244507, 0.0983259, 16.8159, 0.0602856, 4.99742)
 
 [editable path="Odbior3"]
