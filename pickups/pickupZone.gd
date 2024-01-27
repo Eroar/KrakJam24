@@ -1,19 +1,23 @@
 extends Area3D
 
 # parent of pickupableZone objects
-var pickupObject = null
-# the collision shape of the pickupObject
-var collisionObject = null
+var pickedObject = null
+# the collision shape of the pickedObject
+var collisionShape = null
+
+# internal flags
 var pickingUp = false
 var pickedUp = false
 
-func findCollisionObject3D(parentNode:Node) -> CollisionObject3D:
+func findRigidBody3D(parentNode:Node) -> RigidBody3D:
+	if parentNode is RigidBody3D:
+		return parentNode
 	for node in parentNode.get_children():
-		var foundNode = findCollisionObject3D(node)
+		var foundNode = findRigidBody3D(node)
 		if foundNode != null:
 			return foundNode
 		
-		if node is CollisionObject3D:
+		if node is RigidBody3D:
 			return node
 	return null
 
@@ -31,49 +35,43 @@ func pickUp():
 		print("no pickupable object in range")
 		return
 	
-	pickupObject = collisions[0].get_parent()
-	print("picking up", pickupObject)
+	pickedObject = collisions[0].get_parent()
+	print("picking up", pickedObject)
 
-	collisionObject = findCollisionObject3D(pickupObject)
-	if collisionObject == null:
+	collisionShape = findRigidBody3D(pickedObject)
+	if collisionShape == null:
 		push_error("no collision shape found")
 		return
 
+	pickedObject.reparent(self)
+
 	# disable collision and physics on picked up object
-	collisionObject.set_collision_layer(0)
-	collisionObject.set_collision_mask(0)
-	if collisionObject is RigidBody3D:
-		collisionObject.freeze = true
+	collisionShape.set_collision_layer(0)
+	collisionShape.set_collision_mask(0)
+	if collisionShape is RigidBody3D:
+		collisionShape.freeze = true
+		# collisionShape.disabled = true
 
-	pickupObject.reparent(self)
-
-	var newPosition = get_node("CollisionShape3D").global_position + Vector3(0, 0, 0)
-	pickupObject.set_global_position(newPosition)
-
-	pickupObject.transform.basis = transform.basis
-
-	# rotate pickupObject to face player z direction
-	# var facingDirection = global_transform.basis.z
-	# pickupObject.look_at(facingDirection + facingDirection*2)
+	pickedObject.global_transform = global_transform
 	
 	pickedUp = true
 	pickingUp = false
 
 func drop():
-	if pickupObject == null:
+	if pickedObject == null:
 		return
 
-	print("dropping ", collisionObject)
-	collisionObject.set_collision_layer(1)
-	collisionObject.set_collision_mask(1)
-	if collisionObject is RigidBody3D:
-		collisionObject.freeze = false
-	
-	pickupObject.reparent(get_tree().root.get_child(0))
-	
+	print("dropping ", collisionShape)
+	pickedObject.reparent(get_tree().root.get_child(0,false))
 
-	pickupObject = null
-	collisionObject = null
+	collisionShape.set_collision_layer(1)
+	collisionShape.set_collision_mask(1)
+	if collisionShape is RigidBody3D:
+		collisionShape.freeze = false	
+		# collisionShape.disabled = false
+	
+	pickedObject = null
+	collisionShape = null
 	pickedUp = false
 
 func _process(_delta):

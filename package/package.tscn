@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://h6ciucymvy2t"]
+[gd_scene load_steps=5 format=3 uid="uid://h6ciucymvy2t"]
 
 [ext_resource type="PackedScene" uid="uid://c75uyldtupyq8" path="res://package/package.blend" id="1_uoxc1"]
 [ext_resource type="PackedScene" uid="uid://ca738m3fd2g5v" path="res://pickups/pickupableZone.tscn" id="2_o6keg"]
@@ -6,12 +6,17 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_vgp8c"]
 radius = 2.0
 
-[node name="Package" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_logav"]
+size = Vector3(0.8, 0.8, 0.8)
 
-[node name="PackageMesh" parent="." instance=ExtResource("1_uoxc1")]
+[node name="Package" type="RigidBody3D"]
 
 [node name="PickupableZone" parent="." instance=ExtResource("2_o6keg")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PickupableZone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.5, 2.08165e-12)
 shape = SubResource("SphereShape3D_vgp8c")
+
+[node name="package" parent="." instance=ExtResource("1_uoxc1")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_logav")

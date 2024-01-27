@@ -30,3 +30,13 @@ func _physics_process(delta):
 		transform.basis = transform.basis.slerp(target_rotation, delta * ROTATION_SPEED)
 
 	move_and_slide()
+
+
+func _ready():
+	var player =$PlayerMesh/AnimationPlayer
+	player.get_animation("Walking").loop = true
+	player.play("Walking")
+	# player.loop = true
+	# var animation = player.get_animation("Walking")
+	# animation.loop = true
+
