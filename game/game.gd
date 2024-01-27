@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var SCORE = 0
-var letter = preload("res://package/Letter.tscn")
+var letter = preload("res://letter/Letter.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
