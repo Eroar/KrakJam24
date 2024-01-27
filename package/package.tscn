@@ -8,13 +8,10 @@ radius = 1.5
 
 [node name="Package" type="Node3D"]
 
-[node name="PackageMesh" parent="." instance=ExtResource("1_uoxc1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0330942, 0, -0.0114007)
-
 [node name="PickupableZone" parent="." instance=ExtResource("2_o6keg")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PickupableZone"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, 2.08165e-12)
 shape = SubResource("CylinderShape3D_mywwj")
 
-[editable path="PackageMesh"]
+[node name="package" parent="." instance=ExtResource("1_uoxc1")]

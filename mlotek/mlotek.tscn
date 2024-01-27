@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctirxk0eo8ysy"]
+[gd_scene load_steps=4 format=3 uid="uid://ctirxk0eo8ysy"]
 
 [ext_resource type="Script" path="res://mlotek/mlotek.gd" id="1_djvux"]
-[ext_resource type="PackedScene" uid="uid://d2ptjck5cexhu" path="res://mlotek/mlotek.blend" id="1_qhxfs"]
 [ext_resource type="PackedScene" uid="uid://1fa30twek662" path="res://interactions/interactable.tscn" id="2_655gm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1chcq"]
@@ -10,7 +9,7 @@ size = Vector3(2, 1, 0.6)
 [node name="Mlotek" type="Node3D"]
 script = ExtResource("1_djvux")
 
-[node name="MlotekMesh" parent="." instance=ExtResource("1_qhxfs")]
+[node name="MlotekMesh" type="Node3D" parent="."]
 
 [node name="Interactable" parent="." instance=ExtResource("2_655gm")]
 
