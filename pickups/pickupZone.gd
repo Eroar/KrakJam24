@@ -45,10 +45,12 @@ func pickUp():
 	if collisionObject is RigidBody3D:
 		collisionObject.freeze = true
 
-	var newPosition = get_node("CollisionShape3D").global_position+ Vector3(0, 1, 0)
-	print("newPosition", newPosition)
-	pickupObject.set_global_position(newPosition)
 	pickupObject.reparent(self)
+
+	var newPosition = get_node("CollisionShape3D").global_position + Vector3(0, 0, 0)
+	pickupObject.set_global_position(newPosition)
+
+	pickupObject.transform.basis = transform.basis
 
 	# rotate pickupObject to face player z direction
 	# var facingDirection = global_transform.basis.z
