@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://ca738m3fd2g5v"]
+
+[node name="PickupableZone" type="Area3D" groups=["pickupable"]]
