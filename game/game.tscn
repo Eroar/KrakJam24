@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://cwtxx6oqwg8gm"]
+[gd_scene load_steps=10 format=3 uid="uid://cwtxx6oqwg8gm"]
 
 [ext_resource type="PackedScene" uid="uid://beop6laetykxp" path="res://level/level.blend" id="1_twdsq"]
 [ext_resource type="PackedScene" uid="uid://d0nt2yj42xg1f" path="res://player/player.tscn" id="2_mfx4v"]
 [ext_resource type="PackedScene" uid="uid://ctirxk0eo8ysy" path="res://mlotek/mlotek.tscn" id="3_rt35b"]
-[ext_resource type="PackedScene" uid="uid://bephjdfjpv2vw" path="res://game/camera.tscn" id="4_87j8i"]
-[ext_resource type="PackedScene" uid="uid://d2ut1877kxwor" path="res://level/Nadanie.tscn" id="5_gsixh"]
-[ext_resource type="PackedScene" uid="uid://seyjfym47cty" path="res://level/Odbior1.tscn" id="6_cgpxe"]
-[ext_resource type="PackedScene" uid="uid://dudt7in0ha3qg" path="res://level/Odbior2.tscn" id="7_qwsel"]
-[ext_resource type="PackedScene" uid="uid://dgfpeuscerl81" path="res://level/Odbior3.tscn" id="8_7skfu"]
+[ext_resource type="PackedScene" path="res://game/camera.tscn" id="4_87j8i"]
+[ext_resource type="PackedScene" path="res://level/Nadanie.tscn" id="5_gsixh"]
+[ext_resource type="PackedScene" path="res://level/Odbior1.tscn" id="6_cgpxe"]
+[ext_resource type="PackedScene" path="res://level/Odbior2.tscn" id="7_qwsel"]
+[ext_resource type="PackedScene" path="res://level/Odbior3.tscn" id="8_7skfu"]
+[ext_resource type="PackedScene" uid="uid://h6ciucymvy2t" path="res://package/package.tscn" id="9_11mko"]
 
 [node name="Game" type="Node3D"]
 
@@ -37,3 +38,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.25, 2.08165e-12, 0.025)
 
 [node name="Odbior3" parent="." instance=ExtResource("8_7skfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.25, 2.08165e-12, -5.182)
+
+[node name="Package" parent="." instance=ExtResource("9_11mko")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.84835, 0)

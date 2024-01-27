@@ -25,13 +25,13 @@ shape = SubResource("CylinderShape3D_ftbda")
 script = ExtResource("3_ua2jn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteracteeZone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.6, 0.8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, 2)
 shape = SubResource("BoxShape3D_mfcrj")
 
 [node name="PickupZone" parent="." instance=ExtResource("4_p1uw6")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PickupZone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.6, 2.15978)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, 2)
 shape = SubResource("BoxShape3D_mfcrj")
 
 [connection signal="area_entered" from="InteracteeZone" to="InteracteeZone" method="_on_area_entered"]
