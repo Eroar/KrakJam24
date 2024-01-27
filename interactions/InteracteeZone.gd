@@ -58,6 +58,12 @@ func pickUp():
 	pickedUp = true
 	pickingUp = false
 
+func kick():
+	if package == null:
+		return
+	
+	packageRigid.apply_impulse(Vector3.FORWARD, Vector3(0,0,0))
+
 func drop():
 	if package == null:
 		return
@@ -70,6 +76,7 @@ func drop():
 	if packageRigid is RigidBody3D:
 		packageRigid.freeze = false	
 		# packageRigid.disabled = false
+	packageRigid.apply_impulse(global_transform.basis.z*10 + Vector3.UP*10, Vector3(0,0,0))
 	
 	package = null
 	packageRigid = null
@@ -93,6 +100,8 @@ func _process(_delta):
 			drop()
 		else:
 			pickUp()
-	elif  Input.is_action_just_pressed("interact"):
+	elif Input.is_action_just_pressed("interact"):
 		tryToInteract()
+	elif Input.is_action_just_pressed("kick"):
+		kick()
 	
