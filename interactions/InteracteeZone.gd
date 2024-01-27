@@ -75,7 +75,7 @@ func drop():
 	packageRigid.set_collision_mask(1)
 	if packageRigid is RigidBody3D:
 		packageRigid.freeze = false	
-		# packageRigid.disabled = false
+
 	packageRigid.apply_impulse(global_transform.basis.z*10 + Vector3.UP*10, Vector3(0,0,0))
 	
 	package = null
