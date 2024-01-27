@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgfpeuscerl81"]
+
+[ext_resource type="PackedScene" uid="uid://njgs2hkvf8fv" path="res://level/odbior3.blend" id="1_ubqex"]
+
+[node name="Odbior3" type="Node3D"]
+
+[node name="odbior3" parent="." instance=ExtResource("1_ubqex")]
