@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0nt2yj42xg1f"]
+[gd_scene load_steps=8 format=3 uid="uid://d0nt2yj42xg1f"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_5llfd"]
 [ext_resource type="PackedScene" uid="uid://ck232j04jon4c" path="res://player/player.blend" id="1_hupkw"]
@@ -11,6 +11,9 @@ height = 1.5
 radius = 0.8
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mfcrj"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_unb8f"]
 size = Vector3(2, 2, 2)
 
 [node name="Player" type="CharacterBody3D"]
@@ -30,10 +33,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, 2)
 shape = SubResource("BoxShape3D_mfcrj")
 
 [node name="PickupZone" parent="." instance=ExtResource("4_p1uw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, 1.14)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PickupZone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, 2)
-shape = SubResource("BoxShape3D_mfcrj")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 0.86)
+shape = SubResource("BoxShape3D_unb8f")
 
 [connection signal="area_entered" from="InteracteeZone" to="InteracteeZone" method="_on_area_entered"]
 [connection signal="area_exited" from="InteracteeZone" to="InteracteeZone" method="_on_area_exited"]
