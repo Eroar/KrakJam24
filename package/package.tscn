@@ -3,7 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://c75uyldtupyq8" path="res://package/package.blend" id="1_uoxc1"]
 [ext_resource type="PackedScene" uid="uid://ca738m3fd2g5v" path="res://pickups/pickupableZone.tscn" id="2_o6keg"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_esfbp"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_vgp8c"]
+radius = 2.0
 
 [node name="Package" type="Node3D"]
 
@@ -13,4 +14,4 @@
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PickupableZone"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.5, 2.08165e-12)
-shape = SubResource("BoxShape3D_esfbp")
+shape = SubResource("SphereShape3D_vgp8c")

@@ -4,18 +4,8 @@ extends Area3D
 var pickupObject = null
 # the collision shape of the pickupObject
 var collisionObject = null
+var pickingUp = false
 var pickedUp = false
-
-func _on_area_entered(area:Area3D):
-	if area.is_in_group("pickupable"):
-		pickupObject = area.get_parent()
-		print("pickupable entered")
-
-func _on_area_exited(area:Area3D):
-	if area.is_in_group("pickupable") && pickedUp==false:
-		pickupObject = null
-		collisionObject = null
-		print("pickupable exited")
 
 func findCollisionObject3D(parentNode:Node) -> CollisionObject3D:
 	for node in parentNode.get_children():
@@ -27,33 +17,47 @@ func findCollisionObject3D(parentNode:Node) -> CollisionObject3D:
 			return node
 	return null
 
-func onPickup():
-	if pickupObject == null or pickedUp:
+func pickUp():
+	if pickedUp || pickingUp:
 		return
+	pickingUp = true
 
-	print("picking up")
-	pickedUp = true
+	var collisions = get_overlapping_areas()
+	collisions = collisions.filter(func(x): return x.is_in_group("pickupable"))
+
+	# no pickupable object in range
+	if collisions.size() == 0:
+		pickingUp = false
+		print("no pickupable object in range")
+		return
+	
+	pickupObject = collisions[0].get_parent()
+	print("picking up", pickupObject)
 
 	collisionObject = findCollisionObject3D(pickupObject)
 	if collisionObject == null:
 		push_error("no collision shape found")
-		print("no collision shape found")
 		return
 
-	print("collisionObject", collisionObject)
-	print("pickupObject", pickupObject)
 	# disable collision and physics on picked up object
 	collisionObject.set_collision_layer(0)
 	collisionObject.set_collision_mask(0)
 	if collisionObject is RigidBody3D:
 		collisionObject.freeze = true
 
-	pickupObject.set_global_position(get_node("CollisionShape3D").global_position)
+	var newPosition = get_node("CollisionShape3D").global_position+ Vector3(0, 1, 0)
+	print("newPosition", newPosition)
+	pickupObject.set_global_position(newPosition)
 	pickupObject.reparent(self)
 
+	# rotate pickupObject to face player z direction
+	# var facingDirection = global_transform.basis.z
+	# pickupObject.look_at(facingDirection + facingDirection*2)
 	
+	pickedUp = true
+	pickingUp = false
 
-func onDrop():
+func drop():
 	if pickupObject == null:
 		return
 
@@ -73,6 +77,6 @@ func onDrop():
 func _process(_delta):
 	if Input.is_action_just_pressed("pickup-drop"):
 		if pickedUp:
-			onDrop()
+			drop()
 		else:
-			onPickup()
+			pickUp()
