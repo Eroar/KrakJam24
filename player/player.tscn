@@ -1631,7 +1631,7 @@ advance_condition = &"standingWithPackage"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_3uh46"]
 states/Idle/node = SubResource("AnimationNodeAnimation_et5v8")
-states/Idle/position = Vector2(335.54, 71.1175)
+states/Idle/position = Vector2(335.54, 71.1102)
 states/Mikrofala/node = SubResource("AnimationNodeAnimation_24von")
 states/Mikrofala/position = Vector2(385.54, 341.867)
 states/Prasa/node = SubResource("AnimationNodeAnimation_6n3e8")
@@ -1646,7 +1646,7 @@ states/Walking/position = Vector2(319.735, 195.059)
 states/WalkingWithPackage/node = SubResource("AnimationNodeAnimation_c14fc")
 states/WalkingWithPackage/position = Vector2(533.326, 209.052)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_g8qip"), "Idle", "Walking", SubResource("AnimationNodeStateMachineTransition_bh7nl"), "Walking", "WalkingWithPackage", SubResource("AnimationNodeStateMachineTransition_w6xg3"), "Walking", "Idle", SubResource("AnimationNodeStateMachineTransition_fj2ss"), "WalkingWithPackage", "Walking", SubResource("AnimationNodeStateMachineTransition_e1ida"), "Idle", "StandingWithPackage", SubResource("AnimationNodeStateMachineTransition_l8b04"), "StandingWithPackage", "Idle", SubResource("AnimationNodeStateMachineTransition_0u7oi"), "StandingWithPackage", "WalkingWithPackage", SubResource("AnimationNodeStateMachineTransition_2wlwx"), "WalkingWithPackage", "StandingWithPackage", SubResource("AnimationNodeStateMachineTransition_wn85j")]
-graph_offset = Vector2(251.58, 39.4477)
+graph_offset = Vector2(92.6104, -416.942)
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
