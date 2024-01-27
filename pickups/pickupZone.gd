@@ -9,6 +9,19 @@ var collisionShape = null
 var pickingUp = false
 var pickedUp = false
 
+func tryToInteract():
+	var collisions = get_overlapping_areas()
+	collisions = collisions.filter(func(x): return x.is_in_group("interactable"))
+
+	# no interactable object in range
+	if collisions.size() == 0:
+		print("no interactable object in range")
+		return
+	
+	var interactableObject = collisions[0]
+	interactableObject.emit_signal("interaction_requested", null)
+
+
 func findRigidBody3D(parentNode:Node) -> RigidBody3D:
 	if parentNode is RigidBody3D:
 		return parentNode
