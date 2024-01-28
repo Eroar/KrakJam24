@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d0nt2yj42xg1f" path="res://player/player.tscn" id="2_mfx4v"]
 [ext_resource type="PackedScene" uid="uid://ctirxk0eo8ysy" path="res://tables/mlotek/mlotek.tscn" id="3_rt35b"]
 [ext_resource type="PackedScene" uid="uid://bephjdfjpv2vw" path="res://game/camera.tscn" id="4_87j8i"]
-[ext_resource type="PackedScene" uid="uid://d2ut1877kxwor" path="res://level/nadanie.tscn" id="5_gsixh"]
+[ext_resource type="PackedScene" uid="uid://d2ut1877kxwor" path="res://level/Nadanie.tscn" id="5_gsixh"]
 [ext_resource type="PackedScene" uid="uid://cohb346rl302n" path="res://level/Odbior1.tscn" id="6_cgpxe"]
 [ext_resource type="PackedScene" uid="uid://dudt7in0ha3qg" path="res://level/Odbior2.tscn" id="7_qwsel"]
 [ext_resource type="PackedScene" uid="uid://dgfpeuscerl81" path="res://level/Odbior3.tscn" id="8_7skfu"]
@@ -33,9 +33,6 @@ light_energy = 40.0
 [node name="Player" parent="." instance=ExtResource("2_mfx4v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.67563, 1.11968e-07, 0.192105)
 
-[node name="Mlotek" parent="." instance=ExtResource("3_rt35b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.251, 2.08165e-12, 2.137)
-
 [node name="Nadanie" parent="." instance=ExtResource("5_gsixh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7631, 2.08165e-12, 0.427765)
 
@@ -60,6 +57,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13.0103)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 6, 3.526)
 shape = SubResource("BoxShape3D_x1ymp")
 
+[node name="Mlotek" parent="." instance=ExtResource("3_rt35b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.251, 2.08165e-12, 2.137)
+
+[node name="e_mlotek" parent="Mlotek/MlotekMesh" index="1"]
+transform = Transform3D(-0.631696, -0.00729407, -0.775182, -0.775165, -0.0056242, 0.631734, -0.00896769, 0.999958, -0.00210133, -1.03775, 3.58761, -1.42163)
+
 [node name="Prasa" parent="." instance=ExtResource("11_kdlux")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.01, 2.08165e-12, -7.127)
 
@@ -72,7 +75,7 @@ autostart = true
 
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_vwmsi")
-volume_db = -16.0
+volume_db = -80.0
 autoplay = true
 
 [node name="LeweOkno" parent="." instance=ExtResource("14_ndwcm")]
@@ -88,3 +91,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.797, 2.08165e-12, 12)
 
 [editable path="LevelMesh"]
 [editable path="Odbior3"]
+[editable path="Mlotek"]
+[editable path="Mlotek/MlotekMesh"]
