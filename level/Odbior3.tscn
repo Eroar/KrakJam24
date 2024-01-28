@@ -1,7 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgfpeuscerl81"]
+[gd_scene load_steps=5 format=3 uid="uid://dgfpeuscerl81"]
 
+[ext_resource type="Script" path="res://level/Odbior1.gd" id="1_e1hpj"]
 [ext_resource type="PackedScene" uid="uid://njgs2hkvf8fv" path="res://level/odbior3.blend" id="1_ubqex"]
+[ext_resource type="PackedScene" uid="uid://1fa30twek662" path="res://interactions/interactable.tscn" id="2_b64xp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w7jkg"]
+size = Vector3(2.71796, 1.92926, 2.51031)
 
 [node name="Odbior3" type="Node3D"]
+script = ExtResource("1_e1hpj")
 
 [node name="odbior3" parent="." instance=ExtResource("1_ubqex")]
+
+[node name="Interactable" parent="." instance=ExtResource("2_b64xp")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12204, 0.966657, 0)
+shape = SubResource("BoxShape3D_w7jkg")
+
+[connection signal="interaction_start" from="Interactable" to="." method="_on_interaction_start"]

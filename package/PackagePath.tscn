@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdsjcr0rg5lx2"]
+[gd_scene load_steps=3 format=3 uid="uid://bdsjcr0rg5lx2"]
 
-[ext_resource type="PackedScene" uid="uid://h6ciucymvy2t" path="res://package/package.tscn" id="1_aj7x5"]
 [ext_resource type="Script" path="res://package/PackagePath.gd" id="1_ysviw"]
 
 [sub_resource type="Curve3D" id="Curve3D_wrvse"]
@@ -21,6 +20,3 @@ transform = Transform3D(0.222778, 0.0110482, 0.974799, 0, 0.999913, -0.0113332, 
 cubic_interp = false
 loop = false
 tilt_enabled = false
-
-[node name="Package" parent="PathFollow3D" instance=ExtResource("1_aj7x5")]
-transform = Transform3D(1, 1.96755e-11, 1.83062e-09, -4.17735e-10, 1, -4.99485e-10, -7.67597e-10, 4.8502e-10, 1, 0, 0.346806, 0.00862694)
