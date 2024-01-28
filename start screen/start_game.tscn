@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv0bv7g3p6vij"]
+
+[ext_resource type="Script" path="res://start screen/StartGame.gd" id="1_xdrho"]
+[ext_resource type="Texture2D" uid="uid://dyuiwxkhxa1ao" path="res://start screen/startscreen_1.png" id="2_c31hb"]
+
+[node name="StartGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xdrho")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 95.0
+offset_top = 332.0
+offset_right = 491.0
+offset_bottom = 540.0
+
+[node name="Startscreen" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_c31hb")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
