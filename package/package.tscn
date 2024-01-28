@@ -20,7 +20,7 @@ collision_mask = 7
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PickupableZone"]
 shape = SubResource("SphereShape3D_vgp8c")
 
-[node name="package" parent="." instance=ExtResource("1_uoxc1")]
+[node name="PackageMesh" parent="." instance=ExtResource("1_uoxc1")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_logav")
