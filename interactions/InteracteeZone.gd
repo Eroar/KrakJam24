@@ -94,7 +94,7 @@ func unlinkPackage():
 	packageRigid = null
 
 
-func tryToInteract():
+func startInteraction():
 	var collisions = get_overlapping_areas()
 	collisions = collisions.filter(func(x): return x.is_in_group("interactable"))
 
@@ -106,6 +106,18 @@ func tryToInteract():
 	var interactableObject = collisions[0]
 	interactableObject.emit_signal("interaction_start", package, self)
 
+func stopInteraction():
+	var collisions = get_overlapping_areas()
+	collisions = collisions.filter(func(x): return x.is_in_group("interactable"))
+
+	# no interactable object in range
+	if collisions.size() == 0:
+		print("no interactable object in range")
+		return
+	
+	var interactableObject = collisions[0]
+	interactableObject.emit_signal("interaction_stop", package, self)
+
 func _process(_delta):
 	if Input.is_action_just_pressed("pickup-drop"):
 		if hasPackage():
@@ -113,4 +125,6 @@ func _process(_delta):
 		else:
 			pickUp()
 	elif Input.is_action_just_pressed("interact"):
-		tryToInteract()
+		startInteraction()
+	elif Input.is_action_just_released("interact"):
+		stopInteraction()

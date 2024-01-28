@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d2ptjck5cexhu" path="res://mlotek/mlotek.blend" id="3_c3i1o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1chcq"]
-size = Vector3(2, 1, 1.5)
+size = Vector3(5, 3, 3)
 
 [node name="Mlotek" type="Node3D"]
 script = ExtResource("1_djvux")
@@ -14,6 +14,7 @@ script = ExtResource("1_djvux")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.807828, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, 2.08165e-12)
 shape = SubResource("BoxShape3D_1chcq")
 
 [node name="MlotekMesh" parent="." instance=ExtResource("3_c3i1o")]
