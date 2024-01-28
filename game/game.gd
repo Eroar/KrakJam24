@@ -29,6 +29,8 @@ func addScoreOnly(points:int):
 
 func removeScore(points:float):
 	SCORE -= points
+	if SCORE < 0:
+		SCORE = 0
 	updateScoreLabel()
 
 func sleep(seconds:float):
