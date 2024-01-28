@@ -16,3 +16,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000793457, 0.101746, 0.006
 shape = SubResource("BoxShape3D_6o2xj")
 
 [node name="LetterMesh" parent="." instance=ExtResource("1_4lc1t")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

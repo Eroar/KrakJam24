@@ -6,10 +6,6 @@ enum PCKG_TYPE {YELLOW, RED, BLUE}
 @export var TYPE = PCKG_TYPE.YELLOW
 
 var transmission = preload("res://level/EndTransmission.tscn")
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
 
 func _on_interaction_start(package:RigidBody3D, interacee:Area3D):
 	if package != null:
