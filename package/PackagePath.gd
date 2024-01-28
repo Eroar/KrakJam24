@@ -3,7 +3,7 @@ extends Path3D
 var t = 0.0
 
 var pkg_list = [preload("res://package/package.tscn"),
-				preload("res://package/packageBlue.blend"),
+				preload("res://package/packageBlue.tscn"),
 				preload("res://package/packageRed.tscn")]
 # Called when the node enters the scene tree for the first time.
 func _ready():

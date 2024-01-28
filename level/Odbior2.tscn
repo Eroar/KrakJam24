@@ -9,6 +9,7 @@ size = Vector3(2.71796, 1.92926, 2.51031)
 
 [node name="Odbior2" type="Node3D"]
 script = ExtResource("1_1hnrl")
+TYPE = 1
 
 [node name="odbior2" parent="." instance=ExtResource("1_weifa")]
 
