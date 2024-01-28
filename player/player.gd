@@ -4,6 +4,7 @@ extends CharacterBody3D
 @export var ROTATION_SPEED = 5.0
 @onready var aPlayer =$PlayerMesh/AnimationPlayer
 @onready var animationTree = $AnimationTree
+@onready var audioPlayer = $AudioStreamPlayer3D
 
 var interactingWith = ""
 
@@ -24,18 +25,23 @@ func _physics_process(delta):
 	if Input.is_action_pressed("interact"):
 		input_dir = Vector3.ZERO
 
-	var direction = Vector3(input_dir.x, 0, input_dir.y).normalized()
+	var direction = Vector3(input_dir.x, 0.0, input_dir.y).normalized()
 	if direction:
 		velocity.x = -direction.x * MOVEMENT_SPEED
 		velocity.z = -direction.z * MOVEMENT_SPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, MOVEMENT_SPEED)
-		velocity.z = move_toward(velocity.z, 0, MOVEMENT_SPEED)
+		velocity.x = move_toward(velocity.x, 0.0, MOVEMENT_SPEED)
+		velocity.z = move_toward(velocity.z, 0.0, MOVEMENT_SPEED)
 
 	if velocity.length() > 0 && velocity.y == 0:
 		var target_direction = transform.origin - velocity
 		var target_rotation = transform.looking_at(target_direction, Vector3.UP).basis
 		transform.basis = transform.basis.slerp(target_rotation, delta * ROTATION_SPEED)
+		# audioPlayer.playing = true
+	else:
+		pass
+		# audioPlayer.stop()
+	
 
 	move_and_slide()
 	update_animation_parameters()
@@ -61,7 +67,7 @@ func _on_interaction_start(interactee):
 	print("interacting with: ", interactingWith)
 
 func _on_interaction_end(interactee):
-	print("stopped interacting with: ", interactingWith)
+	print("stopped interacting with: ", interactee)
 	interactingWith = ""
 
 func _ready():

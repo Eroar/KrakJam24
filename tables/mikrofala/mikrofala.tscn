@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://t8ld47vbupmn"]
+[gd_scene load_steps=8 format=3 uid="uid://t8ld47vbupmn"]
 
 [ext_resource type="Script" path="res://tables/table.gd" id="1_arabt"]
 [ext_resource type="PackedScene" uid="uid://d37xl3i1opkls" path="res://tables/mikrofala/mikrofala.blend" id="1_mxwew"]
 [ext_resource type="PackedScene" uid="uid://1fa30twek662" path="res://interactions/interactable.tscn" id="2_r70ee"]
+[ext_resource type="AudioStream" uid="uid://dmumo0l5f2hmv" path="res://tables/mikrofala/mikrofala.mp3" id="4_7mpcy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_73gs1"]
 size = Vector3(2, 3, 2)
@@ -30,6 +31,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.28, 1.8, 2.08165e-12)
 shape = SubResource("BoxShape3D_73gs1")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_7mpcy")
 
 [node name="DirectionalLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.44887, 2.04246, 0.242465)
