@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cjhu5t8ky3ugu"
-path="res://.godot/imported/mikrofala.blend-918d309bb4ea4a49f48c87dcc73a2f5b.scn"
+uid="uid://dygrtpcusysw1"
+path="res://.godot/imported/packageBlue.blend-c02c207a620ca9eae14a9ca933809014.scn"
 
 [deps]
 
-source_file="res://mikrofala/mikrofala.blend"
-dest_files=["res://.godot/imported/mikrofala.blend-918d309bb4ea4a49f48c87dcc73a2f5b.scn"]
+source_file="res://package/packageBlue.blend"
+dest_files=["res://.godot/imported/packageBlue.blend-c02c207a620ca9eae14a9ca933809014.scn"]
 
 [params]
 

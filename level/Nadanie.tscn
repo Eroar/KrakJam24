@@ -1,7 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2ut1877kxwor"]
+[gd_scene load_steps=3 format=3 uid="uid://d2ut1877kxwor"]
 
 [ext_resource type="PackedScene" uid="uid://dneqhp1nuk5er" path="res://level/nadanie.blend" id="1_m0l7a"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_nlb0h"]
+size = Vector3(4, 1, 18)
+
 [node name="Nadanie" type="Node3D"]
 
-[node name="nadanie" parent="." instance=ExtResource("1_m0l7a")]
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18, 0.5, 2.08165e-12)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_nlb0h")
+
+[node name="NadanieMesh" parent="." instance=ExtResource("1_m0l7a")]

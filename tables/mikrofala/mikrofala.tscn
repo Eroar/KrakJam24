@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://t8ld47vbupmn"]
+
+[ext_resource type="Script" path="res://tables/table.gd" id="1_arabt"]
+[ext_resource type="PackedScene" uid="uid://d37xl3i1opkls" path="res://tables/mikrofala/mikrofala.blend" id="1_mxwew"]
+[ext_resource type="PackedScene" uid="uid://1fa30twek662" path="res://interactions/interactable.tscn" id="2_r70ee"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_73gs1"]
+size = Vector3(2, 3, 2)
+
+[node name="Mikrofala" type="Node3D" node_paths=PackedStringArray("aPlayer")]
+script = ExtResource("1_arabt")
+ANIMATION_NAME = "otwieranie_drzwi"
+aPlayer = NodePath("MikrofalaMesh/AnimationPlayer")
+
+[node name="MikrofalaMesh" parent="." instance=ExtResource("1_mxwew")]
+
+[node name="e_drzwi" parent="MikrofalaMesh" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.62921e-07, 0, -1.62921e-07, 1, -0.162267, 2.61448, -0.484686)
+
+[node name="Interactable" parent="." instance=ExtResource("2_r70ee")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.28, 1.8, 2.08165e-12)
+shape = SubResource("BoxShape3D_73gs1")
+
+[connection signal="interaction_start" from="Interactable" to="." method="_on_interaction_start"]
+[connection signal="interaction_stop" from="Interactable" to="." method="_on_interaction_stop"]
+
+[editable path="MikrofalaMesh"]

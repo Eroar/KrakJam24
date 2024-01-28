@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bqr4kyai3g5xl"
-path="res://.godot/imported/prasa.blend-f592c142d84ab0243dcef9a12bf271a3.scn"
+path="res://.godot/imported/prasa.blend-4f1f6be6c2e8b4aaaef335fe39918645.scn"
 
 [deps]
 
-source_file="res://prasa/prasa.blend"
-dest_files=["res://.godot/imported/prasa.blend-f592c142d84ab0243dcef9a12bf271a3.scn"]
+source_file="res://tables/prasa/prasa.blend"
+dest_files=["res://.godot/imported/prasa.blend-4f1f6be6c2e8b4aaaef335fe39918645.scn"]
 
 [params]
 

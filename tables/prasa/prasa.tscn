@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://b46gaj455g1pe"]
+
+[ext_resource type="PackedScene" uid="uid://bqr4kyai3g5xl" path="res://tables/prasa/prasa.blend" id="1_bukmr"]
+[ext_resource type="Script" path="res://tables/table.gd" id="1_q5gc6"]
+[ext_resource type="PackedScene" uid="uid://1fa30twek662" path="res://interactions/interactable.tscn" id="3_7gcfb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kauf6"]
+size = Vector3(4, 3, 3)
+
+[node name="Prasa" type="Node3D" node_paths=PackedStringArray("aPlayer")]
+script = ExtResource("1_q5gc6")
+aPlayer = NodePath("PrasaMesh/AnimationPlayer")
+
+[node name="PrasaMesh" parent="." instance=ExtResource("1_bukmr")]
+
+[node name="Interactable" parent="." instance=ExtResource("3_7gcfb")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.5, 2.08165e-12)
+shape = SubResource("BoxShape3D_kauf6")
+
+[connection signal="animation_finished" from="PrasaMesh/AnimationPlayer" to="." method="_on_animation_finished"]
+[connection signal="interaction_start" from="Interactable" to="." method="_on_interaction_start"]
+[connection signal="interaction_stop" from="Interactable" to="." method="_on_interaction_stop"]
+
+[editable path="PrasaMesh"]

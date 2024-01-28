@@ -10,7 +10,7 @@ height = 1.5
 radius = 0.8
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mfcrj"]
-size = Vector3(2, 2, 2)
+size = Vector3(2, 4, 2)
 
 [sub_resource type="Animation" id="Animation_5f0jj"]
 resource_name = "0TPose"
