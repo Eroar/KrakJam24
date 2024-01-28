@@ -48,12 +48,13 @@ func update_animation_parameters():
 	var standingWithPackage = velocity==Vector3.ZERO && hasPackage
 	var walking = velocity!=Vector3.ZERO && !hasPackage
 	var walkingWithPackage = velocity!=Vector3.ZERO && hasPackage
-	
-	animationTree["parameters/conditions/idle"] = idle
-	animationTree["parameters/conditions/standingWithPackage"] = standingWithPackage
-	animationTree["parameters/conditions/walking"] = walking
-	animationTree["parameters/conditions/walkingWithPackage"] = walkingWithPackage
-	animationTree["parameters/conditions/mlot"] = interactingWith=="InteractableMlotek"
+	var mlot = interactingWith=="InteractableMlotek"
+
+	animationTree["parameters/conditions/idle"] = idle && !mlot
+	animationTree["parameters/conditions/standingWithPackage"] = standingWithPackage && !mlot
+	animationTree["parameters/conditions/walking"] = walking && !mlot
+	animationTree["parameters/conditions/walkingWithPackage"] = walkingWithPackage && !mlot
+	animationTree["parameters/conditions/mlot"] = mlot
 
 func _on_interaction_start(interactee):
 	interactingWith = interactee.get_name()

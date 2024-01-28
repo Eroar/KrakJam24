@@ -1460,17 +1460,17 @@ advance_condition = &"standingWithPackage"
 advance_mode = 2
 advance_condition = &"mlot"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qiufx"]
-advance_mode = 2
-advance_condition = &"standingWithPackage"
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_p2nk2"]
 advance_mode = 2
 advance_condition = &"mlot"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lm0tw"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jamcr"]
 advance_mode = 2
 advance_condition = &"walkingWithPackage"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_alckj"]
+advance_mode = 2
+advance_condition = &"standingWithPackage"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_3uh46"]
 states/Idle/node = SubResource("AnimationNodeAnimation_et5v8")
@@ -1488,7 +1488,7 @@ states/Walking/node = SubResource("AnimationNodeAnimation_0r2rm")
 states/Walking/position = Vector2(309.235, 108.806)
 states/WalkingWithPackage/node = SubResource("AnimationNodeAnimation_c14fc")
 states/WalkingWithPackage/position = Vector2(423.326, 207.552)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_g8qip"), "Idle", "Walking", SubResource("AnimationNodeStateMachineTransition_bh7nl"), "Walking", "WalkingWithPackage", SubResource("AnimationNodeStateMachineTransition_w6xg3"), "Walking", "Idle", SubResource("AnimationNodeStateMachineTransition_fj2ss"), "WalkingWithPackage", "Walking", SubResource("AnimationNodeStateMachineTransition_e1ida"), "Idle", "StandingWithPackage", SubResource("AnimationNodeStateMachineTransition_l8b04"), "StandingWithPackage", "Idle", SubResource("AnimationNodeStateMachineTransition_0u7oi"), "StandingWithPackage", "WalkingWithPackage", SubResource("AnimationNodeStateMachineTransition_2wlwx"), "WalkingWithPackage", "StandingWithPackage", SubResource("AnimationNodeStateMachineTransition_wn85j"), "StandingWithPackage", "WalenieMlotem", SubResource("AnimationNodeStateMachineTransition_i2rq6"), "WalenieMlotem", "StandingWithPackage", SubResource("AnimationNodeStateMachineTransition_qiufx"), "WalkingWithPackage", "WalenieMlotem", SubResource("AnimationNodeStateMachineTransition_p2nk2"), "WalenieMlotem", "WalkingWithPackage", SubResource("AnimationNodeStateMachineTransition_lm0tw")]
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_g8qip"), "Idle", "Walking", SubResource("AnimationNodeStateMachineTransition_bh7nl"), "Walking", "WalkingWithPackage", SubResource("AnimationNodeStateMachineTransition_w6xg3"), "Walking", "Idle", SubResource("AnimationNodeStateMachineTransition_fj2ss"), "WalkingWithPackage", "Walking", SubResource("AnimationNodeStateMachineTransition_e1ida"), "Idle", "StandingWithPackage", SubResource("AnimationNodeStateMachineTransition_l8b04"), "StandingWithPackage", "Idle", SubResource("AnimationNodeStateMachineTransition_0u7oi"), "StandingWithPackage", "WalkingWithPackage", SubResource("AnimationNodeStateMachineTransition_2wlwx"), "WalkingWithPackage", "StandingWithPackage", SubResource("AnimationNodeStateMachineTransition_wn85j"), "StandingWithPackage", "WalenieMlotem", SubResource("AnimationNodeStateMachineTransition_i2rq6"), "WalkingWithPackage", "WalenieMlotem", SubResource("AnimationNodeStateMachineTransition_p2nk2"), "WalenieMlotem", "WalkingWithPackage", SubResource("AnimationNodeStateMachineTransition_jamcr"), "WalenieMlotem", "StandingWithPackage", SubResource("AnimationNodeStateMachineTransition_alckj")]
 graph_offset = Vector2(244.627, -17.9051)
 
 [node name="Player" type="CharacterBody3D"]
