@@ -48,11 +48,7 @@ func update_animation_parameters():
 	animationTree["parameters/conditions/walkingWithPackage"] = walkingWithPackage
 
 func _ready():
-	aPlayer.get_animation("Walking").loop = true
-	aPlayer.get_animation("Idle").loop = true
-	aPlayer.get_animation("WalkingWithPackage").loop = true
-	aPlayer.get_animation("StandingWithPackage").loop = true
-
-	# player.loop = true
-	# animation.loop = true
+	for animation in aPlayer.get_animation_list():
+		print("player animation: ", animation)
+		aPlayer.get_animation(animation).loop = true
 

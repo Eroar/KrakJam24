@@ -92,7 +92,7 @@ func tryToInteract():
 		return
 	
 	var interactableObject = collisions[0]
-	interactableObject.emit_signal("interaction_requested", package)
+	interactableObject.emit_signal("interaction_start", package)
 
 func _process(_delta):
 	if Input.is_action_just_pressed("pickup-drop"):
