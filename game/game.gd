@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var SCORE:int = 0
+@export var SCORE:float = 0.0
 var letter = preload("res://letter/Letter.tscn")
 var aKierownik = preload("res://kierownicy/kierownikAprobata.tscn")
 var dKierownik = preload("res://kierownicy/kierownikDysaprobata.tscn")
@@ -16,12 +16,20 @@ func makeItRain():
 		add_child.call_deferred(new_letter)
 
 func updateScoreLabel():
-	$Label3D.text = str(SCORE) + " LAT DLA POCZTY PLOSKIEJ!"
+	var scoreInt = int(SCORE)
+	$Label3D.text = str(scoreInt) + " LAT DLA POCZTY PLOSKIEJ!"
 
 func addScore(points:int):
 	SCORE += points
 	updateScoreLabel()
 	makeItRain()
+func addScoreOnly(points:int):
+	SCORE += points
+	updateScoreLabel()
+
+func removeScore(points:float):
+	SCORE -= points
+	updateScoreLabel()
 
 func sleep(seconds:float):
 	return await get_tree().create_timer(seconds).timeout

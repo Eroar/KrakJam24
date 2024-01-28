@@ -34,7 +34,6 @@ spot_angle = 59.33
 [node name="Player" parent="." instance=ExtResource("2_mfx4v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.14623, 1.11968e-07, 0.671948)
 MOVEMENT_SPEED = 8.0
-ROTATION_SPEED = 5.0
 
 [node name="Nadanie" parent="." instance=ExtResource("5_gsixh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7631, 2.08165e-12, 0.427765)
@@ -75,8 +74,9 @@ autostart = true
 
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_vwmsi")
-volume_db = -80.0
+volume_db = -20.449
 autoplay = true
+stream_paused = true
 
 [node name="LeweOkno" parent="." instance=ExtResource("14_ndwcm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, 2.08165e-12, 12)
