@@ -49,5 +49,6 @@ func update_animation_parameters():
 
 func _ready():
 	for animation in aPlayer.get_animation_list():
+		print("player animation: ", animation)
 		aPlayer.get_animation(animation).loop = true
 
