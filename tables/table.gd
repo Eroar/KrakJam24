@@ -4,9 +4,18 @@ extends Node3D
 @export var aPlayer: AnimationPlayer = null
 
 func _on_interaction_start(package, _interactee):
-	if package == null:
+	print(package)
+	if package != null:
+		aPlayer.play(ANIMATION_NAME)
+		if ANIMATION_NAME == "Zgniatanie":
+			package.PRESSED = true
+		elif ANIMATION_NAME == "Promieniowanie":
+			package.RADIATED = true
+		elif  ANIMATION_NAME == "Walenie":
+			package.HAMMERED = true
+			
+		package.POINT_VALUE += 10
 		return
-	aPlayer.play(ANIMATION_NAME)
 
 func _on_interaction_stop(_package, _interactee):
 	aPlayer.stop()
