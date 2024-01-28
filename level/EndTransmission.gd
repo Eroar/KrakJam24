@@ -11,3 +11,5 @@ func _ready():
 func _process(delta):
 	t += delta
 	$PathFollow3D.progress = 2.0 * t
+	if $PathFollow3D.progress == 4:
+		queue_free()
