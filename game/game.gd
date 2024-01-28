@@ -26,19 +26,23 @@ func addScore(points:int):
 func sleep(seconds:float):
 	return await get_tree().create_timer(seconds).timeout
 
+func getRandomOkno():
+	var randomWindow = randi() % 3
+	if randomWindow == 0:
+		return leweOkno
+	elif randomWindow == 1:
+		return srodkoweOkno
+	else:
+		return praweOkno
+
 func spawnRandomKierownik():
 	# choose random kierownik, aKierownik or dKierownik
 	var randomKierownik = randi() % 2
 	var newKierownik = aKierownik.instantiate() if randomKierownik==0 else dKierownik.instantiate()
 	newKierownik.position = Vector3(0, 0, 0)
 
-	var randomWindow = randi() % 3
-	if randomWindow == 0:
-		leweOkno.add_child.call_deferred(newKierownik)
-	elif randomWindow == 1:
-		srodkoweOkno.add_child.call_deferred(newKierownik)
-	else:
-		praweOkno.add_child.call_deferred(newKierownik)
+	var randomOkno = getRandomOkno()
+	randomOkno.addKierownik(newKierownik)
 
 # game loop
 func _ready():

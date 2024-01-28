@@ -1,9 +1,43 @@
-[gd_scene load_steps=2 format=3 uid="uid://duxhg8ui55wfa"]
+[gd_scene load_steps=3 format=3 uid="uid://duxhg8ui55wfa"]
 
+[ext_resource type="Script" path="res://kierownicy/kierownikAprobata.gd" id="1_4m4kw"]
 [ext_resource type="PackedScene" uid="uid://bhhovpltkfpuk" path="res://kierownicy/kierownik_aprobata.blend" id="1_kvimp"]
 
 [node name="KierownikAprobata" type="Node3D"]
+script = ExtResource("1_4m4kw")
+metadata/lightColor = Color(0.831373, 0, 0.054902, 1)
 
 [node name="KierownikAprobataMesh" parent="." instance=ExtResource("1_kvimp")]
 
+[node name="Skeleton3D" parent="KierownikAprobataMesh/Armature" index="0"]
+bones/0/rotation = Quaternion(0.0357325, 7.44582e-08, 2.66228e-09, 0.999361)
+bones/0/scale = Vector3(1, 1, 1)
+bones/1/rotation = Quaternion(0.427305, -1.43572e-07, -4.18235e-09, 0.904108)
+bones/2/rotation = Quaternion(-0.463035, 1.2199e-07, 1.43325e-08, 0.88634)
+bones/3/rotation = Quaternion(0.00016666, -8.66601e-08, 3.3366e-12, 1)
+bones/4/rotation = Quaternion(-0.421423, -0.219753, -0.672093, 0.567805)
+bones/4/scale = Vector3(1, 1, 1)
+bones/5/rotation = Quaternion(0.160541, 5.0988e-08, 3.70001e-08, 0.987029)
+bones/6/rotation = Quaternion(-1.01648e-08, -9.3236e-08, 0.0614472, 0.99811)
+bones/7/rotation = Quaternion(-0.421423, 0.219753, 0.672093, 0.567805)
+bones/7/scale = Vector3(1, 1, 1)
+bones/8/rotation = Quaternion(0.160541, -3.62801e-08, -3.93924e-08, 0.987029)
+bones/9/rotation = Quaternion(-2.12585e-08, 9.57502e-08, -0.0614472, 0.99811)
+bones/10/rotation = Quaternion(-4.34934e-08, 0.0997349, 0.995014, -4.35956e-09)
+bones/10/scale = Vector3(1, 1, 0.999993)
+bones/11/rotation = Quaternion(-0.217425, 7.44919e-08, -1.75647e-08, 0.976077)
+bones/12/rotation = Quaternion(0.772034, -7.57675e-08, -2.45405e-08, 0.635581)
+bones/13/rotation = Quaternion(-1.93736e-07, 0.0997349, 0.995014, -1.94192e-08)
+bones/13/scale = Vector3(1, 1, 0.999993)
+bones/14/rotation = Quaternion(-0.217425, -1.58223e-07, -3.13866e-08, 0.976077)
+bones/15/rotation = Quaternion(0.772034, 7.57678e-08, 2.45401e-08, 0.635581)
+bones/15/scale = Vector3(1, 1, 1)
+bones/16/rotation = Quaternion(8.42937e-08, 0.707107, 0.707107, 8.42937e-08)
+bones/17/rotation = Quaternion(-5.33851e-08, 0.707107, -0.707107, 5.33851e-08)
+bones/18/rotation = Quaternion(-8.42937e-08, 0.707107, 0.707107, -8.42937e-08)
+bones/19/rotation = Quaternion(5.33851e-08, 0.707107, -0.707107, -5.33851e-08)
+bones/20/rotation = Quaternion(-0.707107, 0, 0, 0.707107)
+
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[editable path="KierownikAprobataMesh"]
