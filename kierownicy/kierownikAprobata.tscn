@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://duxhg8ui55wfa"]
+
+[ext_resource type="PackedScene" uid="uid://bhhovpltkfpuk" path="res://kierownicy/kierownik_aprobata.blend" id="1_kvimp"]
+
+[node name="KierownikAprobata" type="Node3D"]
+
+[node name="KierownikAprobataMesh" parent="." instance=ExtResource("1_kvimp")]

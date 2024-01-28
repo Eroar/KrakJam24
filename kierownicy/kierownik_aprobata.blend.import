@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bhhovpltkfpuk"
-path="res://.godot/imported/kierownik_aprobata.blend-9c273d0c665c6ce39eafe129ac9eafd4.scn"
+path="res://.godot/imported/kierownik_aprobata.blend-76bdd24b5451b9db8b0244310f261644.scn"
 
 [deps]
 
-source_file="res://player/kierownik_aprobata.blend"
-dest_files=["res://.godot/imported/kierownik_aprobata.blend-9c273d0c665c6ce39eafe129ac9eafd4.scn"]
+source_file="res://kierownicy/kierownik_aprobata.blend"
+dest_files=["res://.godot/imported/kierownik_aprobata.blend-76bdd24b5451b9db8b0244310f261644.scn"]
 
 [params]
 

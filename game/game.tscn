@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d0nt2yj42xg1f" path="res://player/player.tscn" id="2_mfx4v"]
 [ext_resource type="PackedScene" uid="uid://ctirxk0eo8ysy" path="res://tables/mlotek/mlotek.tscn" id="3_rt35b"]
 [ext_resource type="PackedScene" uid="uid://bephjdfjpv2vw" path="res://game/camera.tscn" id="4_87j8i"]
-[ext_resource type="PackedScene" uid="uid://d2ut1877kxwor" path="res://level/Nadanie.tscn" id="5_gsixh"]
+[ext_resource type="PackedScene" uid="uid://d2ut1877kxwor" path="res://level/nadanie.tscn" id="5_gsixh"]
 [ext_resource type="PackedScene" uid="uid://cohb346rl302n" path="res://level/Odbior1.tscn" id="6_cgpxe"]
 [ext_resource type="PackedScene" uid="uid://dudt7in0ha3qg" path="res://level/Odbior2.tscn" id="7_qwsel"]
 [ext_resource type="PackedScene" uid="uid://dgfpeuscerl81" path="res://level/Odbior3.tscn" id="8_7skfu"]
@@ -77,6 +77,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.851, 2.08165e-12, -2.985)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
+
+[node name="PraweOkno" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25, 2.08165e-12, 12)
+
+[node name="SrodkoweOkno" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.77, 2.08165e-12, 12)
+
+[node name="LeweOkno" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, 2.08165e-12, 12)
 
 [connection signal="timeout" from="Timer" to="LevelMesh" method="spawn_package"]
 
