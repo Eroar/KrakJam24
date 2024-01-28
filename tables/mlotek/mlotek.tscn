@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://dwlqyiueh7t7h" path="res://tables/mlotek/mlotek.mp3" id="4_lxyt2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1chcq"]
-size = Vector3(5, 3, 3)
+size = Vector3(2, 3, 4.68738)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ewlnj"]
 size = Vector3(2.4, 2, 10.73)
@@ -20,7 +20,7 @@ aPlayer = NodePath("MlotekMesh/AnimationPlayer")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.807828, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableMlotek"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, 2.08165e-12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -0.394104)
 shape = SubResource("BoxShape3D_1chcq")
 
 [node name="MlotekMesh" parent="." instance=ExtResource("3_c3i1o")]
