@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://i2eqofxik7kr"
+path="res://.godot/imported/zły  nielot.mp3-510b09b288c179f84cf5cdc4c15f0c3e.mp3str"
+
+[deps]
+
+source_file="res://kierownicy/KierownikAprobata/zły  nielot.mp3"
+dest_files=["res://.godot/imported/zły  nielot.mp3-510b09b288c179f84cf5cdc4c15f0c3e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

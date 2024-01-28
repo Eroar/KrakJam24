@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ce5p32hl8ohmx"
+path="res://.godot/imported/podniesienie paczki.mp3-d3362c06e2bae6125076ec9bf8fd90a8.mp3str"
+
+[deps]
+
+source_file="res://package/audio/podniesienie paczki.mp3"
+dest_files=["res://.godot/imported/podniesienie paczki.mp3-d3362c06e2bae6125076ec9bf8fd90a8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
