@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cwtxx6oqwg8gm"]
+[gd_scene load_steps=15 format=3 uid="uid://cwtxx6oqwg8gm"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_5d84a"]
 [ext_resource type="PackedScene" uid="uid://beop6laetykxp" path="res://level/level.blend" id="1_twdsq"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dgfpeuscerl81" path="res://level/Odbior3.tscn" id="8_7skfu"]
 [ext_resource type="PackedScene" uid="uid://b46gaj455g1pe" path="res://tables/prasa/prasa.tscn" id="11_kdlux"]
 [ext_resource type="PackedScene" uid="uid://t8ld47vbupmn" path="res://tables/mikrofala/mikrofala.tscn" id="12_7b4a3"]
+[ext_resource type="AudioStream" uid="uid://ei3m01c3rb7d" path="res://music/Karpov_Not_Kasparov-Deep_Fritz.mp3" id="13_vwmsi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x1ymp"]
 size = Vector3(30, 15, 1)
@@ -86,6 +87,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.77, 2.08165e-12, 12)
 
 [node name="LeweOkno" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, 2.08165e-12, 12)
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_vwmsi")
+volume_db = -16.0
+autoplay = true
 
 [connection signal="timeout" from="Timer" to="LevelMesh" method="spawn_package"]
 
