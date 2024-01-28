@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var SCORE = 0
+@export var SCORE:int = 0
 var letter = preload("res://letter/Letter.tscn")
 
 # Called when the node enters the scene tree for the first time.
@@ -13,5 +13,5 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	$Label3D.text = str(SCORE) + " LAT DLA POCZTY PLOSKIEJ!"
