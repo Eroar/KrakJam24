@@ -7,7 +7,9 @@ var packageRigid = null
 
 # internal flags
 var pickingUp = false
-var pickedUp = false
+
+func hasPackage()->bool:
+	return package != null
 
 func findRigidBody3D(parentNode:Node) -> RigidBody3D:
 	if parentNode is RigidBody3D:
@@ -22,7 +24,7 @@ func findRigidBody3D(parentNode:Node) -> RigidBody3D:
 	return null
 
 func pickUp():
-	if pickedUp || pickingUp:
+	if hasPackage() || pickingUp:
 		return
 	pickingUp = true
 
@@ -55,32 +57,37 @@ func pickUp():
 
 	package.global_transform = global_transform
 	
-	pickedUp = true
 	pickingUp = false
 
 func kick():
 	if package == null:
 		return
 	
-	packageRigid.apply_impulse(Vector3.FORWARD, Vector3(0,0,0))
+	# packageRigid.apply_impulse(Vector3.FORWARD, Vector3(0,0,0))
 
 func drop():
-	if package == null:
+	if !hasPackage():
 		return
 
 	print("dropping ", packageRigid)
 	package.reparent(get_tree().root.get_child(0,false))
+	
+	var tempRigid = packageRigid
 
+	unlinkPackage()
+
+	tempRigid.apply_impulse(global_transform.basis.z*10 + Vector3.UP*10, Vector3(0,0,0))
+	
+func unlinkPackage():
+	if !hasPackage():
+		return
 	packageRigid.set_collision_layer(1)
 	packageRigid.set_collision_mask(1)
 	if packageRigid is RigidBody3D:
 		packageRigid.freeze = false	
-
-	packageRigid.apply_impulse(global_transform.basis.z*10 + Vector3.UP*10, Vector3(0,0,0))
-	
 	package = null
 	packageRigid = null
-	pickedUp = false
+
 
 func tryToInteract():
 	var collisions = get_overlapping_areas()
@@ -92,11 +99,11 @@ func tryToInteract():
 		return
 	
 	var interactableObject = collisions[0]
-	interactableObject.emit_signal("interaction_start", package)
+	interactableObject.emit_signal("interaction_start", package, self)
 
 func _process(_delta):
 	if Input.is_action_just_pressed("pickup-drop"):
-		if pickedUp:
+		if hasPackage():
 			drop()
 		else:
 			pickUp()

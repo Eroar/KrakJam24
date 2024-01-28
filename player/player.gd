@@ -35,7 +35,7 @@ func _physics_process(delta):
 
 
 func update_animation_parameters():
-	var hasPackage = $InteracteeZone.pickedUp
+	var hasPackage = $InteracteeZone.hasPackage()
 
 	var idle = velocity==Vector3.ZERO && !hasPackage
 	var standingWithPackage = velocity==Vector3.ZERO && hasPackage
