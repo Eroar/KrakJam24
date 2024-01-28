@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dj6lx8vo8peqn"]
+
+[ext_resource type="Script" path="res://kierownicy/okno.gd" id="1_0qaq6"]
+
+[node name="Okno" type="Node3D"]
+script = ExtResource("1_0qaq6")
+
+[node name="Light" type="SpotLight3D" parent="."]
+transform = Transform3D(0.999414, 0.00421079, 0.0339835, -0.0339835, 0.243995, 0.969181, -0.00421079, -0.969767, 0.243995, 2.08165e-12, 6, 1)
+light_energy = 20.0
+spot_range = 4096.0
+spot_angle = 18.0188
+spot_angle_attenuation = 1.23333

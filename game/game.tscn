@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cwtxx6oqwg8gm"]
+[gd_scene load_steps=16 format=3 uid="uid://cwtxx6oqwg8gm"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_5d84a"]
 [ext_resource type="PackedScene" uid="uid://beop6laetykxp" path="res://level/level.blend" id="1_twdsq"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b46gaj455g1pe" path="res://tables/prasa/prasa.tscn" id="11_kdlux"]
 [ext_resource type="PackedScene" uid="uid://t8ld47vbupmn" path="res://tables/mikrofala/mikrofala.tscn" id="12_7b4a3"]
 [ext_resource type="AudioStream" uid="uid://ei3m01c3rb7d" path="res://music/Karpov_Not_Kasparov-Deep_Fritz.mp3" id="13_vwmsi"]
+[ext_resource type="PackedScene" uid="uid://dj6lx8vo8peqn" path="res://kierownicy/okno.tscn" id="14_ndwcm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x1ymp"]
 size = Vector3(30, 15, 1)
@@ -26,16 +27,6 @@ script = ExtResource("2_80i2f")
 [node name="s_gora" parent="LevelMesh" index="0"]
 transform = Transform3D(-1.19209e-07, -1, -1.98662e-08, -0.2222, 7.1187e-09, 0.975001, -0.975001, 1.20643e-07, -0.2222, 0, 19.8478, 0)
 light_energy = 40.0
-spot_angle = 59.33
-
-[node name="s_lewo" parent="LevelMesh" index="1"]
-light_energy = 20.0
-
-[node name="s_prawe" parent="LevelMesh" index="2"]
-light_energy = 20.0
-
-[node name="s_srodek" parent="LevelMesh" index="3"]
-light_energy = 20.0
 
 [node name="Camera" parent="." instance=ExtResource("4_87j8i")]
 
@@ -79,19 +70,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.851, 2.08165e-12, -2.985)
 wait_time = 3.0
 autostart = true
 
-[node name="PraweOkno" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25, 2.08165e-12, 12)
-
-[node name="SrodkoweOkno" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.77, 2.08165e-12, 12)
-
-[node name="LeweOkno" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, 2.08165e-12, 12)
-
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_vwmsi")
 volume_db = -16.0
 autoplay = true
+
+[node name="LeweOkno" parent="." instance=ExtResource("14_ndwcm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, 2.08165e-12, 12)
+
+[node name="PraweOkno" parent="." instance=ExtResource("14_ndwcm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25, 2.08165e-12, 12)
+
+[node name="SrodkoweOkno" parent="." instance=ExtResource("14_ndwcm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.797, 2.08165e-12, 12)
 
 [connection signal="timeout" from="Timer" to="LevelMesh" method="spawn_package"]
 
