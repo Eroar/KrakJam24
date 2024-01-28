@@ -5,3 +5,5 @@
 [node name="KierownikDysaprobata" type="Node3D"]
 
 [node name="KierownikDysaprobataMesh" parent="." instance=ExtResource("1_pqlbj")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

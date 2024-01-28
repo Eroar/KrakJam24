@@ -21,6 +21,8 @@ shape = SubResource("BoxShape3D_1chcq")
 
 [node name="MlotekMesh" parent="." instance=ExtResource("3_c3i1o")]
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
 [connection signal="interaction_start" from="Interactable" to="." method="_on_interaction_start"]
 [connection signal="interaction_stop" from="Interactable" to="." method="_on_interaction_stop"]
 

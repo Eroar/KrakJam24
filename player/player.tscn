@@ -1527,6 +1527,8 @@ bones/15/rotation = Quaternion(0.772034, 7.57678e-08, 2.45401e-08, 0.635581)
 bones/17/rotation = Quaternion(-5.33851e-08, 0.707107, -0.707107, 5.33851e-08)
 bones/19/rotation = Quaternion(5.33851e-08, 0.707107, -0.707107, -5.33851e-08)
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
 [connection signal="area_entered" from="InteracteeZone" to="InteracteeZone" method="_on_area_entered"]
 [connection signal="area_exited" from="InteracteeZone" to="InteracteeZone" method="_on_area_exited"]
 

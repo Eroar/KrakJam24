@@ -23,6 +23,8 @@ transform = Transform3D(-0.559501, 1.35034e-07, -0.82883, 2.84217e-14, 1, 1.6292
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.28, 1.8, 2.08165e-12)
 shape = SubResource("BoxShape3D_73gs1")
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
 [connection signal="interaction_start" from="Interactable" to="." method="_on_interaction_start"]
 [connection signal="interaction_stop" from="Interactable" to="." method="_on_interaction_stop"]
 
