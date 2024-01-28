@@ -25,9 +25,9 @@ script = ExtResource("1_5d84a")
 script = ExtResource("2_80i2f")
 
 [node name="s_gora" parent="LevelMesh" index="0"]
-transform = Transform3D(-1.19209e-07, -1, -1.98662e-08, -0.2222, 7.1187e-09, 0.975001, -0.975001, 1.20643e-07, -0.2222, 0, 19.8478, 0)
-light_energy = 40.0
-spot_angle = 59.33
+transform = Transform3D(-1.19209e-07, -1, -1.98661e-08, 0.103135, -3.20548e-08, 0.994667, -0.994667, 1.16524e-07, 0.103135, 0, 19.8478, 0)
+light_energy = 16.0
+spot_angle = 47.66
 
 [node name="Camera" parent="." instance=ExtResource("4_87j8i")]
 
