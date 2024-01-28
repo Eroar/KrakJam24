@@ -1,5 +1,8 @@
 extends Area3D
 
+@export var KICK_FORCE_FORWARD = 10
+@export var KICK_FORCE_UP = 10
+
 # parent of pickupableZone objects
 var package = null
 # the collision shape of the package
@@ -59,11 +62,6 @@ func pickUp():
 	
 	pickingUp = false
 
-func kick():
-	if package == null:
-		return
-	
-	# packageRigid.apply_impulse(Vector3.FORWARD, Vector3(0,0,0))
 
 func drop():
 	if !hasPackage():
@@ -76,8 +74,15 @@ func drop():
 
 	unlinkPackage()
 
-	tempRigid.apply_impulse(global_transform.basis.z*10 + Vector3.UP*10, Vector3(0,0,0))
+	kick(tempRigid)
 	
+func kick(node:RigidBody3D):
+	if node == null:
+		return
+
+	node.apply_impulse(global_transform.basis.z*KICK_FORCE_FORWARD + Vector3.UP*KICK_FORCE_UP, Vector3(0,0,0))
+
+
 func unlinkPackage():
 	if !hasPackage():
 		return
@@ -109,6 +114,3 @@ func _process(_delta):
 			pickUp()
 	elif Input.is_action_just_pressed("interact"):
 		tryToInteract()
-	elif Input.is_action_just_pressed("kick"):
-		kick()
-	
