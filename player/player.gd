@@ -5,6 +5,8 @@ extends CharacterBody3D
 @onready var aPlayer =$PlayerMesh/AnimationPlayer
 @onready var animationTree = $AnimationTree
 
+var interactingWith = ""
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -51,6 +53,15 @@ func update_animation_parameters():
 	animationTree["parameters/conditions/standingWithPackage"] = standingWithPackage
 	animationTree["parameters/conditions/walking"] = walking
 	animationTree["parameters/conditions/walkingWithPackage"] = walkingWithPackage
+	animationTree["parameters/conditions/mlot"] = interactingWith=="InteractableMlotek"
+
+func _on_interaction_start(interactee):
+	interactingWith = interactee.get_name()
+	print("interacting with: ", interactingWith)
+
+func _on_interaction_end(interactee):
+	print("stopped interacting with: ", interactingWith)
+	interactingWith = ""
 
 func _ready():
 	for animation in aPlayer.get_animation_list():

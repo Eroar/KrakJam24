@@ -1,5 +1,8 @@
 extends Area3D
 
+signal interaction_start(interactable)
+signal interaction_stop(interactable)
+
 @export var KICK_FORCE_FORWARD = 10
 @export var KICK_FORCE_UP = 10
 
@@ -105,6 +108,7 @@ func startInteraction():
 	
 	var interactableObject = collisions[0]
 	interactableObject.emit_signal("interaction_start", package, self)
+	emit_signal("interaction_start", interactableObject)
 
 func stopInteraction():
 	var collisions = get_overlapping_areas()
@@ -117,6 +121,7 @@ func stopInteraction():
 	
 	var interactableObject = collisions[0]
 	interactableObject.emit_signal("interaction_stop", package, self)
+	emit_signal("interaction_stop", interactableObject)
 
 func _process(_delta):
 	if Input.is_action_just_pressed("pickup-drop"):

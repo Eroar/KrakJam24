@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://d0nt2yj42xg1f"]
+[gd_scene load_steps=36 format=3 uid="uid://d0nt2yj42xg1f"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_5llfd"]
 [ext_resource type="PackedScene" uid="uid://ck232j04jon4c" path="res://player/player.blend" id="1_hupkw"]
@@ -1456,24 +1456,40 @@ advance_condition = &"walkingWithPackage"
 advance_mode = 2
 advance_condition = &"standingWithPackage"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_i2rq6"]
+advance_mode = 2
+advance_condition = &"mlot"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qiufx"]
+advance_mode = 2
+advance_condition = &"standingWithPackage"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_p2nk2"]
+advance_mode = 2
+advance_condition = &"mlot"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lm0tw"]
+advance_mode = 2
+advance_condition = &"walkingWithPackage"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_3uh46"]
 states/Idle/node = SubResource("AnimationNodeAnimation_et5v8")
-states/Idle/position = Vector2(335.54, 71.1102)
+states/Idle/position = Vector2(533.469, 12.1102)
 states/Mikrofala/node = SubResource("AnimationNodeAnimation_24von")
 states/Mikrofala/position = Vector2(385.54, 341.867)
 states/Prasa/node = SubResource("AnimationNodeAnimation_6n3e8")
 states/Prasa/position = Vector2(533.398, 334.617)
 states/StandingWithPackage/node = SubResource("AnimationNodeAnimation_jqeqv")
-states/StandingWithPackage/position = Vector2(466.128, -73.8924)
+states/StandingWithPackage/position = Vector2(727.128, 177.608)
 states/Start/position = Vector2(113.5, 71.1028)
 states/WalenieMlotem/node = SubResource("AnimationNodeAnimation_drras")
-states/WalenieMlotem/position = Vector2(694.54, 342.617)
+states/WalenieMlotem/position = Vector2(753.54, 343.242)
 states/Walking/node = SubResource("AnimationNodeAnimation_0r2rm")
-states/Walking/position = Vector2(293.235, 208.806)
+states/Walking/position = Vector2(309.235, 108.806)
 states/WalkingWithPackage/node = SubResource("AnimationNodeAnimation_c14fc")
-states/WalkingWithPackage/position = Vector2(533.326, 209.052)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_g8qip"), "Idle", "Walking", SubResource("AnimationNodeStateMachineTransition_bh7nl"), "Walking", "WalkingWithPackage", SubResource("AnimationNodeStateMachineTransition_w6xg3"), "Walking", "Idle", SubResource("AnimationNodeStateMachineTransition_fj2ss"), "WalkingWithPackage", "Walking", SubResource("AnimationNodeStateMachineTransition_e1ida"), "Idle", "StandingWithPackage", SubResource("AnimationNodeStateMachineTransition_l8b04"), "StandingWithPackage", "Idle", SubResource("AnimationNodeStateMachineTransition_0u7oi"), "StandingWithPackage", "WalkingWithPackage", SubResource("AnimationNodeStateMachineTransition_2wlwx"), "WalkingWithPackage", "StandingWithPackage", SubResource("AnimationNodeStateMachineTransition_wn85j")]
-graph_offset = Vector2(-20.7602, -60.31)
+states/WalkingWithPackage/position = Vector2(423.326, 207.552)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_g8qip"), "Idle", "Walking", SubResource("AnimationNodeStateMachineTransition_bh7nl"), "Walking", "WalkingWithPackage", SubResource("AnimationNodeStateMachineTransition_w6xg3"), "Walking", "Idle", SubResource("AnimationNodeStateMachineTransition_fj2ss"), "WalkingWithPackage", "Walking", SubResource("AnimationNodeStateMachineTransition_e1ida"), "Idle", "StandingWithPackage", SubResource("AnimationNodeStateMachineTransition_l8b04"), "StandingWithPackage", "Idle", SubResource("AnimationNodeStateMachineTransition_0u7oi"), "StandingWithPackage", "WalkingWithPackage", SubResource("AnimationNodeStateMachineTransition_2wlwx"), "WalkingWithPackage", "StandingWithPackage", SubResource("AnimationNodeStateMachineTransition_wn85j"), "StandingWithPackage", "WalenieMlotem", SubResource("AnimationNodeStateMachineTransition_i2rq6"), "WalenieMlotem", "StandingWithPackage", SubResource("AnimationNodeStateMachineTransition_qiufx"), "WalkingWithPackage", "WalenieMlotem", SubResource("AnimationNodeStateMachineTransition_p2nk2"), "WalenieMlotem", "WalkingWithPackage", SubResource("AnimationNodeStateMachineTransition_lm0tw")]
+graph_offset = Vector2(244.627, -17.9051)
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
@@ -1502,6 +1518,7 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_3uh46")
 anim_player = NodePath("../PlayerMesh/AnimationPlayer")
 parameters/conditions/idle = false
+parameters/conditions/mlot = false
 parameters/conditions/standingWithPackage = false
 parameters/conditions/walking = false
 parameters/conditions/walkingWithPackage = false
@@ -1531,5 +1548,8 @@ bones/19/rotation = Quaternion(5.33851e-08, 0.707107, -0.707107, -5.33851e-08)
 
 [connection signal="area_entered" from="InteracteeZone" to="InteracteeZone" method="_on_area_entered"]
 [connection signal="area_exited" from="InteracteeZone" to="InteracteeZone" method="_on_area_exited"]
+[connection signal="interaction_start" from="InteracteeZone" to="." method="_on_interaction_start"]
+[connection signal="interaction_stop" from="InteracteeZone" to="." method="_on_interaction_end"]
+[connection signal="interaction_stop" from="InteracteeZone" to="." method="_on_interaction_stop"]
 
 [editable path="PlayerMesh"]
