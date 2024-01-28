@@ -9,13 +9,13 @@ size = Vector3(2, 3, 2)
 
 [node name="Mikrofala" type="Node3D" node_paths=PackedStringArray("aPlayer")]
 script = ExtResource("1_arabt")
-ANIMATION_NAME = "otwieranie_drzwi"
+ANIMATION_NAME = "Promieniowanie"
 aPlayer = NodePath("MikrofalaMesh/AnimationPlayer")
 
 [node name="MikrofalaMesh" parent="." instance=ExtResource("1_mxwew")]
 
 [node name="e_drzwi" parent="MikrofalaMesh" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 1.62921e-07, 0, -1.62921e-07, 1, -0.162267, 2.61448, -0.484686)
+transform = Transform3D(-0.559501, 1.35034e-07, -0.82883, 2.84217e-14, 1, 1.62921e-07, 0.82883, 9.11542e-08, -0.559501, -0.162267, 2.61448, -0.484686)
 
 [node name="Interactable" parent="." instance=ExtResource("2_r70ee")]
 

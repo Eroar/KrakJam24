@@ -4,8 +4,8 @@ extends Node3D
 @export var aPlayer: AnimationPlayer = null
 
 func _on_interaction_start(package, _interactee):
-    if package == null:
-        return
+	if package == null:
+		return
 	aPlayer.play(ANIMATION_NAME)
 
 func _on_interaction_stop(_package, _interactee):
