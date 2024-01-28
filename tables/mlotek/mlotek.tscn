@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctirxk0eo8ysy"]
+[gd_scene load_steps=6 format=3 uid="uid://ctirxk0eo8ysy"]
 
 [ext_resource type="Script" path="res://tables/table.gd" id="1_ktimd"]
 [ext_resource type="PackedScene" uid="uid://1fa30twek662" path="res://interactions/interactable.tscn" id="2_655gm"]
@@ -6,6 +6,9 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1chcq"]
 size = Vector3(5, 3, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ewlnj"]
+size = Vector3(2.4, 2, 10.73)
 
 [node name="Mlotek" type="Node3D" node_paths=PackedStringArray("aPlayer")]
 script = ExtResource("1_ktimd")
@@ -25,6 +28,12 @@ shape = SubResource("BoxShape3D_1chcq")
 transform = Transform3D(-0.631696, -0.00729407, -0.775182, -0.775165, -0.0056242, 0.631734, -0.0089677, 0.999958, -0.00210132, -1.03775, 3.58761, -1.42163)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.96, 2.08165e-12)
+shape = SubResource("BoxShape3D_ewlnj")
 
 [connection signal="interaction_start" from="InteractableMlotek" to="." method="_on_interaction_start"]
 [connection signal="interaction_stop" from="InteractableMlotek" to="." method="_on_interaction_stop"]
