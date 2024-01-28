@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b6ku6xitrrdu4"
+path="res://.godot/imported/kolizja paczki.mp3-5a4a3dbc04d7ba2632af94164fae994e.mp3str"
+
+[deps]
+
+source_file="res://package/audio/kolizja paczki.mp3"
+dest_files=["res://.godot/imported/kolizja paczki.mp3-5a4a3dbc04d7ba2632af94164fae994e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

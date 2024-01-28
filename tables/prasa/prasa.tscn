@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b46gaj455g1pe"]
+[gd_scene load_steps=6 format=3 uid="uid://b46gaj455g1pe"]
 
 [ext_resource type="PackedScene" uid="uid://bqr4kyai3g5xl" path="res://tables/prasa/prasa.blend" id="1_bukmr"]
 [ext_resource type="Script" path="res://tables/table.gd" id="1_q5gc6"]
@@ -6,6 +6,9 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kauf6"]
 size = Vector3(4, 3, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0pk06"]
+size = Vector3(5, 3, 2)
 
 [node name="Prasa" type="Node3D" node_paths=PackedStringArray("aPlayer")]
 script = ExtResource("1_q5gc6")
@@ -20,6 +23,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.5, 2.08165e-12
 shape = SubResource("BoxShape3D_kauf6")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.5, 2.08165e-12)
+shape = SubResource("BoxShape3D_0pk06")
 
 [connection signal="animation_finished" from="PrasaMesh/AnimationPlayer" to="." method="_on_animation_finished"]
 [connection signal="interaction_start" from="Interactable" to="." method="_on_interaction_start"]

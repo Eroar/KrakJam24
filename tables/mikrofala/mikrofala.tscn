@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://t8ld47vbupmn"]
+[gd_scene load_steps=7 format=3 uid="uid://t8ld47vbupmn"]
 
 [ext_resource type="Script" path="res://tables/table.gd" id="1_arabt"]
 [ext_resource type="PackedScene" uid="uid://d37xl3i1opkls" path="res://tables/mikrofala/mikrofala.blend" id="1_mxwew"]
@@ -6,6 +6,12 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_73gs1"]
 size = Vector3(2, 3, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k53y2"]
+size = Vector3(1.77, 1.7, 7.28)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xd8sy"]
+size = Vector3(2, 3.3, 1.8)
 
 [node name="Mikrofala" type="Node3D" node_paths=PackedStringArray("aPlayer")]
 script = ExtResource("1_arabt")
@@ -30,6 +36,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.44887, 2.04246, 0.242465)
 visible = false
 light_color = Color(0.356863, 1, 0.498039, 1)
 light_energy = 13.963
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="DlugiStol" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.56, 0.9, -2.38)
+shape = SubResource("BoxShape3D_k53y2")
+
+[node name="KrotkiStol" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32, 1.65, 0.26)
+shape = SubResource("BoxShape3D_xd8sy")
 
 [connection signal="animation_finished" from="MikrofalaMesh/AnimationPlayer" to="." method="_on_animation_finished"]
 [connection signal="interaction_start" from="Interactable" to="." method="_on_interaction_start"]
