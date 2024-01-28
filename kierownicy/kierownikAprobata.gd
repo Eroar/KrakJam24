@@ -5,4 +5,3 @@ func _ready():
 	var anim = get_node("KierownikAprobataMesh/AnimationPlayer")
 	anim.get_animation("Aprobata").loop = true
 	anim.play("Aprobata")
-	pass # Replace with function body.
