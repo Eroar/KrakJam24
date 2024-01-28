@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cohb346rl302n"]
+[gd_scene load_steps=6 format=3 uid="uid://cohb346rl302n"]
 
 [ext_resource type="Script" path="res://level/Odbior1.gd" id="1_kp5hb"]
 [ext_resource type="PackedScene" uid="uid://qlnyluw25qe" path="res://level/odbior1.blend" id="1_qjd61"]
@@ -6,6 +6,9 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0yn5g"]
 size = Vector3(2.71796, 1.92926, 2.51031)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sj1bv"]
+size = Vector3(2.29038, 0.866567, 2.4306)
 
 [node name="Odbior1" type="Node3D"]
 script = ExtResource("1_kp5hb")
@@ -17,5 +20,11 @@ script = ExtResource("1_kp5hb")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12204, 0.966657, 0)
 shape = SubResource("BoxShape3D_0yn5g")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.177384, 0.42427, -9.89139e-05)
+shape = SubResource("BoxShape3D_sj1bv")
 
 [connection signal="interaction_start" from="Interactable" to="." method="_on_interaction_start"]
