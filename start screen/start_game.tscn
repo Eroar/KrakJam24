@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cv0bv7g3p6vij"]
+[gd_scene load_steps=3 format=3 uid="uid://cmry71h85cles"]
 
 [ext_resource type="Script" path="res://start screen/StartGame.gd" id="1_xdrho"]
-[ext_resource type="Texture2D" uid="uid://dyuiwxkhxa1ao" path="res://start screen/startscreen_1.png" id="2_c31hb"]
+[ext_resource type="Texture2D" uid="uid://bxgky1w06dbp" path="res://start screen/startscreen_1.png" id="2_c31hb"]
 
 [node name="StartGame" type="Control"]
 layout_mode = 3
@@ -13,6 +13,7 @@ grow_vertical = 2
 script = ExtResource("1_xdrho")
 
 [node name="Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 95.0
 offset_top = 332.0
 offset_right = 491.0

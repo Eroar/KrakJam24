@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://package/Package.gd" id="1_ly3ax"]
 [ext_resource type="PackedScene" uid="uid://ca738m3fd2g5v" path="res://pickups/pickupableZone.tscn" id="2_o6keg"]
-[ext_resource type="PackedScene" uid="uid://gsqc814dcl5d" path="res://package/packageRed.blend" id="2_orhvc"]
+[ext_resource type="PackedScene" uid="uid://ccu48w8elusqr" path="res://package/packageRed.blend" id="2_orhvc"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vgp8c"]
 radius = 2.0
@@ -26,6 +26,4 @@ shape = SubResource("SphereShape3D_vgp8c")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_logav")
 
-[node name="packageRed" parent="." instance=ExtResource("2_orhvc")]
-
-[editable path="packageRed"]
+[node name="PackageRedMesh" parent="." instance=ExtResource("2_orhvc")]
